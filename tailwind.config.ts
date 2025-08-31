@@ -18,6 +18,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'orbitron': ['Orbitron', 'monospace'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +64,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Cyberpunk Colors
+				'neon-purple': 'hsl(var(--neon-purple))',
+				'neon-pink': 'hsl(var(--neon-pink))',
+				'neon-cyan': 'hsl(var(--neon-cyan))',
+				'neon-green': 'hsl(var(--neon-green))',
+				'cyber-dark': 'hsl(var(--cyber-dark))',
+				'cyber-surface': 'hsl(var(--cyber-surface))',
+				'cyber-surface-hover': 'hsl(var(--cyber-surface-hover))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -70,25 +81,51 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'glow-pulse': {
+					'0%, 100%': { 
+						boxShadow: '0 0 5px hsl(var(--neon-purple)), 0 0 10px hsl(var(--neon-purple)), 0 0 15px hsl(var(--neon-purple))' 
 					},
-					to: {
-						height: '0'
+					'50%': { 
+						boxShadow: '0 0 10px hsl(var(--neon-purple)), 0 0 20px hsl(var(--neon-purple)), 0 0 30px hsl(var(--neon-purple))' 
 					}
+				},
+				'neon-flicker': {
+					'0%, 19%, 21%, 23%, 25%, 54%, 56%, 100%': {
+						opacity: '1',
+					},
+					'20%, 24%, 55%': {
+						opacity: '0.4',
+					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+				'neon-flicker': 'neon-flicker 1.5s infinite linear',
+				'float': 'float 3s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'gradient-neon': 'var(--gradient-neon)',
+				'gradient-cyber': 'var(--gradient-cyber)',
+				'gradient-glow': 'var(--gradient-glow)'
+			},
+			boxShadow: {
+				'glow-purple': 'var(--glow-purple)',
+				'glow-pink': 'var(--glow-pink)',
+				'glow-cyan': 'var(--glow-cyan)',
+				'cyber': 'var(--shadow-cyber)'
 			}
 		}
 	},
