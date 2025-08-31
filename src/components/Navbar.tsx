@@ -16,7 +16,7 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-cyber-dark/90 backdrop-blur-md border-b border-neon-purple/20"
+      className="fixed top-0 left-0 right-0 z-50 bg-neo-dark/90 backdrop-blur-md border-b border-neo-green/20"
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
@@ -25,9 +25,9 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="font-orbitron font-bold text-xl text-neon-purple"
+            className="font-neo font-bold text-xl text-neo-green tracking-wider"
           >
-            &lt;/CYBER&gt;
+            &lt;/NEO TOKYO&gt;
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -39,10 +39,10 @@ const Navbar = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
-                className="flex items-center space-x-2 text-foreground hover:text-neon-purple transition-all duration-300 relative group"
+                className="flex items-center space-x-2 text-foreground hover:text-neo-green transition-all duration-300 relative group"
               >
-                <item.icon className="w-4 h-4 text-neon-cyan" />
-                <span className="font-orbitron">{item.name}</span>
+                <item.icon className="w-4 h-4 text-neo-cyan" />
+                <span className="font-neo text-lg tracking-wide">{item.name}</span>
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-neon group-hover:w-full transition-all duration-300" />
               </motion.a>
             ))}
@@ -52,7 +52,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-neon-purple hover:text-neon-pink transition-colors duration-300"
+              className="text-neo-green hover:text-neo-cyan transition-colors duration-300"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -65,7 +65,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden py-4 border-t border-neon-purple/20"
+            className="md:hidden py-4 border-t border-neo-green/20"
           >
             {navItems.map((item, index) => (
               <motion.a
@@ -75,10 +75,10 @@ const Navbar = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.1 * index }}
                 onClick={() => setIsOpen(false)}
-                className="flex items-center space-x-3 py-3 text-foreground hover:text-neon-purple transition-colors duration-300"
+                className="flex items-center space-x-3 py-3 text-foreground hover:text-neo-green transition-colors duration-300"
               >
-                <item.icon className="w-4 h-4 text-neon-cyan" />
-                <span className="font-orbitron">{item.name}</span>
+                <item.icon className="w-4 h-4 text-neo-cyan" />
+                <span className="font-neo text-lg tracking-wide">{item.name}</span>
               </motion.a>
             ))}
           </motion.div>

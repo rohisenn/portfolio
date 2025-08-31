@@ -19,7 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'orbitron': ['Orbitron', 'monospace'],
+				'neo': ['VT323', 'Share Tech Mono', 'monospace'],
+				'cyber': ['Share Tech Mono', 'monospace'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -65,14 +66,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Cyberpunk Colors
-				'neon-purple': 'hsl(var(--neon-purple))',
-				'neon-pink': 'hsl(var(--neon-pink))',
-				'neon-cyan': 'hsl(var(--neon-cyan))',
-				'neon-green': 'hsl(var(--neon-green))',
-				'cyber-dark': 'hsl(var(--cyber-dark))',
-				'cyber-surface': 'hsl(var(--cyber-surface))',
-				'cyber-surface-hover': 'hsl(var(--cyber-surface-hover))'
+				// Neo Tokyo Colors
+				'neo-green': 'hsl(var(--neo-green))',
+				'neo-cyan': 'hsl(var(--neo-cyan))',
+				'neo-dark': 'hsl(var(--neo-dark))',
+				'neo-surface': 'hsl(var(--neo-surface))',
+				'neo-surface-hover': 'hsl(var(--neo-surface-hover))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -90,10 +89,10 @@ export default {
 				},
 				'glow-pulse': {
 					'0%, 100%': { 
-						boxShadow: '0 0 5px hsl(var(--neon-purple)), 0 0 10px hsl(var(--neon-purple)), 0 0 15px hsl(var(--neon-purple))' 
+						boxShadow: '0 0 5px hsl(var(--neo-green)), 0 0 10px hsl(var(--neo-green)), 0 0 15px hsl(var(--neo-green))' 
 					},
 					'50%': { 
-						boxShadow: '0 0 10px hsl(var(--neon-purple)), 0 0 20px hsl(var(--neon-purple)), 0 0 30px hsl(var(--neon-purple))' 
+						boxShadow: '0 0 10px hsl(var(--neo-green)), 0 0 20px hsl(var(--neo-green)), 0 0 30px hsl(var(--neo-green))' 
 					}
 				},
 				'neon-flicker': {
@@ -122,8 +121,7 @@ export default {
 				'gradient-glow': 'var(--gradient-glow)'
 			},
 			boxShadow: {
-				'glow-purple': 'var(--glow-purple)',
-				'glow-pink': 'var(--glow-pink)',
+				'glow-green': 'var(--glow-green)',
 				'glow-cyan': 'var(--glow-cyan)',
 				'cyber': 'var(--shadow-cyber)'
 			}

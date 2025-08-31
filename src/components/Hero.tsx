@@ -10,14 +10,14 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Animated background grid */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-30">
         <div className="absolute inset-0" 
              style={{
                backgroundImage: `
-                 linear-gradient(rgba(138, 43, 226, 0.1) 1px, transparent 1px),
-                 linear-gradient(90deg, rgba(138, 43, 226, 0.1) 1px, transparent 1px)
+                 linear-gradient(rgba(0, 255, 170, 0.2) 1px, transparent 1px),
+                 linear-gradient(90deg, rgba(0, 255, 170, 0.2) 1px, transparent 1px)
                `,
-               backgroundSize: '50px 50px'
+               backgroundSize: '60px 60px'
              }}
         />
       </div>
@@ -34,7 +34,7 @@ const Hero = () => {
             repeat: Infinity,
             ease: "linear"
           }}
-          className="absolute top-20 left-20 w-8 h-8 border-2 border-neon-cyan rotate-45"
+          className="absolute top-20 left-20 w-8 h-8 border-2 border-neo-cyan rotate-45"
         />
         <motion.div
           animate={{ 
@@ -46,7 +46,7 @@ const Hero = () => {
             repeat: Infinity,
             ease: "linear"
           }}
-          className="absolute top-40 right-32 w-6 h-6 bg-neon-pink/20 rotate-45"
+          className="absolute top-40 right-32 w-6 h-6 bg-neo-cyan/20 rotate-45"
         />
         <motion.div
           animate={{ 
@@ -58,7 +58,7 @@ const Hero = () => {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute bottom-40 left-40 w-4 h-4 border border-neon-green rounded-full"
+          className="absolute bottom-40 left-40 w-4 h-4 border border-neo-green rounded-full"
         />
       </div>
 
@@ -76,20 +76,20 @@ const Hero = () => {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="relative mb-6"
           >
-            <h1 className="font-orbitron font-black text-4xl md:text-6xl lg:text-7xl text-neon-purple mb-2 relative">
+            <h1 className="font-neo font-black text-5xl md:text-7xl lg:text-8xl text-neo-green mb-2 relative tracking-widest">
               <motion.span
                 animate={{ opacity: [1, 0.8, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
                 className="relative z-10"
               >
-                CYBER DEV
+                NEO TOKYO
               </motion.span>
               {/* Glitch layers */}
-              <span className="absolute inset-0 text-neon-pink animate-neon-flicker opacity-20 translate-x-1">
-                CYBER DEV
+              <span className="absolute inset-0 text-neo-cyan animate-neon-flicker opacity-20 translate-x-1">
+                NEO TOKYO
               </span>
-              <span className="absolute inset-0 text-neon-cyan animate-neon-flicker opacity-20 -translate-x-1">
-                CYBER DEV
+              <span className="absolute inset-0 text-neo-cyan animate-neon-flicker opacity-20 -translate-x-1">
+                NEO TOKYO
               </span>
             </h1>
           </motion.div>
@@ -99,21 +99,21 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-xl md:text-2xl text-muted-foreground mb-8 font-orbitron"
+            className="text-xl md:text-2xl text-muted-foreground mb-8 font-neo tracking-wide"
           >
-            <Code2 className="inline w-6 h-6 text-neon-cyan mr-2" />
-            Full Stack Developer & Digital Architect
-            <Sparkles className="inline w-6 h-6 text-neon-pink ml-2" />
+            <Code2 className="inline w-6 h-6 text-neo-cyan mr-2" />
+            CYBERPUNK INSPIRED NOODLE BAR
+            <Sparkles className="inline w-6 h-6 text-neo-green ml-2" />
           </motion.p>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10"
+            className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 font-cyber"
           >
-            Crafting immersive digital experiences with cutting-edge technology. 
-            Specialized in React, TypeScript, and cyberpunk aesthetics.
+            Experience the future of dining with our AI-powered noodle preparation 
+            and immersive cyberpunk atmosphere. Where tradition meets technology.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -126,18 +126,18 @@ const Hero = () => {
             <Button
               onClick={scrollToProjects}
               size="lg"
-              className="bg-gradient-neon hover:shadow-glow-purple text-cyber-dark font-orbitron font-bold px-8 py-3 transition-all duration-300 hover:scale-105"
+              className="bg-gradient-neon hover:shadow-glow-green text-neo-dark font-neo font-bold px-8 py-3 transition-all duration-300 hover:scale-105 text-lg tracking-wide"
             >
-              View Projects
+              ENTER THE MATRIX
               <ChevronDown className="ml-2 w-4 h-4" />
             </Button>
             
             <Button
               variant="outline"
               size="lg"
-              className="border-neon-cyan text-neon-cyan hover:bg-neon-cyan/10 hover:shadow-glow-cyan font-orbitron font-bold px-8 py-3 transition-all duration-300 hover:scale-105"
+              className="border-neo-cyan text-neo-cyan hover:bg-neo-cyan/10 hover:shadow-glow-cyan font-neo font-bold px-8 py-3 transition-all duration-300 hover:scale-105 text-lg tracking-wide"
             >
-              Download Resume
+              VIEW MENU
             </Button>
           </motion.div>
 
@@ -153,8 +153,8 @@ const Hero = () => {
               transition={{ duration: 2, repeat: Infinity }}
               className="flex flex-col items-center text-muted-foreground"
             >
-              <span className="text-sm font-orbitron mb-2">SCROLL</span>
-              <ChevronDown className="w-4 h-4 text-neon-purple animate-pulse" />
+              <span className="text-sm font-neo mb-2 tracking-widest">SCROLL</span>
+              <ChevronDown className="w-4 h-4 text-neo-green animate-pulse" />
             </motion.div>
           </motion.div>
         </motion.div>

@@ -38,13 +38,21 @@ const Index = () => {
   ];
 
   const socialLinks = [
-    { name: 'GitHub', icon: Github, href: 'https://github.com', color: 'text-neon-purple' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com', color: 'text-neon-cyan' },
-    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com', color: 'text-neon-pink' },
+    { name: 'Instagram', icon: Github, href: 'https://instagram.com/neotokyo_mtl', color: 'text-neo-green' },
+    { name: 'Location', icon: Linkedin, href: 'https://maps.google.com', color: 'text-neo-cyan' },
+    { name: 'Reservations', icon: Twitter, href: 'tel:+1234567890', color: 'text-neo-green' },
   ];
 
   return (
-    <div className="min-h-screen bg-cyber-dark text-foreground">
+    <div className="min-h-screen bg-neo-dark text-foreground"
+         style={{
+           backgroundImage: `
+             linear-gradient(rgba(0, 255, 170, 0.05) 1px, transparent 1px),
+             linear-gradient(90deg, rgba(0, 255, 170, 0.05) 1px, transparent 1px)
+           `,
+           backgroundSize: '40px 40px'
+         }}
+    >
       <Navbar />
       <Hero />
 
@@ -59,43 +67,41 @@ const Index = () => {
             className="max-w-4xl mx-auto"
           >
             <div className="text-center mb-12">
-              <h2 className="font-orbitron font-bold text-3xl md:text-4xl text-neon-purple mb-4">
-                <User className="inline w-8 h-8 mr-3 text-neon-cyan" />
-                About Me
+              <h2 className="font-neo font-bold text-3xl md:text-4xl text-neo-green mb-4 tracking-widest">
+                <User className="inline w-8 h-8 mr-3 text-neo-cyan" />
+                ABOUT THE BAR
               </h2>
               <div className="w-20 h-1 bg-gradient-neon mx-auto"></div>
             </div>
 
-            <div className="bg-cyber-surface/50 backdrop-blur-sm border border-neon-purple/20 rounded-lg p-8 hover:border-neon-purple/50 transition-all duration-300">
+            <div className="bg-neo-surface/50 backdrop-blur-sm border border-neo-green/20 rounded p-8 hover:border-neo-green/50 transition-all duration-300">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                  <h3 className="font-orbitron font-bold text-xl text-neon-cyan mb-4">
-                    Digital Architect & Code Artist
+                  <h3 className="font-neo font-bold text-xl text-neo-cyan mb-4 tracking-wide">
+                    Cyberpunk Dining Experience
                   </h3>
                   <p className="text-muted-foreground leading-relaxed mb-6">
-                    I'm a passionate full-stack developer who specializes in creating 
-                    immersive digital experiences. With expertise in modern web technologies 
-                    and a love for cyberpunk aesthetics, I bring futuristic visions to life 
-                    through clean, efficient code.
+                    Welcome to Neo Tokyo - where the future of dining meets traditional 
+                    ramen craftsmanship. Our AI-enhanced kitchen and immersive cyberpunk 
+                    atmosphere create an unforgettable culinary journey.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    When I'm not coding, you'll find me exploring new technologies, 
-                    contributing to open source projects, or designing the next 
-                    generation of user interfaces.
+                    Every bowl is crafted with precision technology while honoring 
+                    ancient noodle-making traditions. Step into tomorrow, taste yesterday.
                   </p>
                 </div>
                 <div className="space-y-4">
-                  <div className="bg-neon-purple/10 p-4 rounded border border-neon-purple/20">
-                    <h4 className="font-orbitron text-neon-purple mb-2">Frontend</h4>
-                    <p className="text-sm text-muted-foreground">React, TypeScript, Next.js, Tailwind CSS</p>
+                  <div className="bg-neo-green/10 p-4 rounded border border-neo-green/20">
+                    <h4 className="font-neo text-neo-green mb-2 tracking-wide">SPECIALTY RAMEN</h4>
+                    <p className="text-sm text-muted-foreground">Tonkotsu, Miso, Shoyu, Cyberpunk Special</p>
                   </div>
-                  <div className="bg-neon-cyan/10 p-4 rounded border border-neon-cyan/20">
-                    <h4 className="font-orbitron text-neon-cyan mb-2">Backend</h4>
-                    <p className="text-sm text-muted-foreground">Node.js, Python, PostgreSQL, MongoDB</p>
+                  <div className="bg-neo-cyan/10 p-4 rounded border border-neo-cyan/20">
+                    <h4 className="font-neo text-neo-cyan mb-2 tracking-wide">ATMOSPHERE</h4>
+                    <p className="text-sm text-muted-foreground">Neon lights, retro-future design, immersive dining</p>
                   </div>
-                  <div className="bg-neon-pink/10 p-4 rounded border border-neon-pink/20">
-                    <h4 className="font-orbitron text-neon-pink mb-2">Tools</h4>
-                    <p className="text-sm text-muted-foreground">Docker, AWS, Vercel, Figma</p>
+                  <div className="bg-neo-green/10 p-4 rounded border border-neo-green/20">
+                    <h4 className="font-neo text-neo-green mb-2 tracking-wide">EXPERIENCE</h4>
+                    <p className="text-sm text-muted-foreground">AI ordering, holographic menus, live kitchen</p>
                   </div>
                 </div>
               </div>
@@ -114,13 +120,13 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="font-orbitron font-bold text-3xl md:text-4xl text-neon-purple mb-4">
-              <Briefcase className="inline w-8 h-8 mr-3 text-neon-cyan" />
-              Featured Projects
+            <h2 className="font-neo font-bold text-3xl md:text-4xl text-neo-green mb-4 tracking-widest">
+              <Briefcase className="inline w-8 h-8 mr-3 text-neo-cyan" />
+              SIGNATURE DISHES
             </h2>
             <div className="w-20 h-1 bg-gradient-neon mx-auto mb-6"></div>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Explore my latest work showcasing cutting-edge technology and innovative design
+              Explore our fusion of traditional ramen and cutting-edge culinary technology
             </p>
           </motion.div>
 
@@ -150,24 +156,25 @@ const Index = () => {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h2 className="font-orbitron font-bold text-3xl md:text-4xl text-neon-purple mb-4">
-              <Mail className="inline w-8 h-8 mr-3 text-neon-cyan" />
-              Get In Touch
+            <h2 className="font-neo font-bold text-3xl md:text-4xl text-neo-green mb-4 tracking-widest">
+              <Mail className="inline w-8 h-8 mr-3 text-neo-cyan" />
+              VISIT US
             </h2>
             <div className="w-20 h-1 bg-gradient-neon mx-auto mb-8"></div>
             
-            <div className="bg-cyber-surface/50 backdrop-blur-sm border border-neon-purple/20 rounded-lg p-8 hover:border-neon-purple/50 transition-all duration-300">
+            <div className="bg-neo-surface/50 backdrop-blur-sm border border-neo-green/20 rounded p-8 hover:border-neo-green/50 transition-all duration-300">
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                Ready to start your next project? Let's connect and create something amazing together. 
-                I'm always open to discussing new opportunities and innovative ideas.
+                Ready to experience the future of dining? Join us at Neo Tokyo 
+                for an unforgettable journey through flavors and technology. 
+                Reservations recommended for the full cyberpunk experience.
               </p>
               
               <Button
                 size="lg"
-                className="bg-gradient-neon hover:shadow-glow-purple text-cyber-dark font-orbitron font-bold px-8 py-3 mb-8 transition-all duration-300 hover:scale-105"
+                className="bg-gradient-neon hover:shadow-glow-green text-neo-dark font-neo font-bold px-8 py-3 mb-8 transition-all duration-300 hover:scale-105 text-lg tracking-wide"
               >
                 <Mail className="mr-2 w-5 h-5" />
-                Send Message
+                MAKE RESERVATION
               </Button>
 
               <div className="flex justify-center space-x-6">
@@ -182,7 +189,7 @@ const Index = () => {
                     transition={{ delay: index * 0.1 }}
                     whileHover={{ scale: 1.2, y: -5 }}
                     viewport={{ once: true }}
-                    className={`p-3 bg-cyber-surface border border-current rounded-full ${social.color} hover:shadow-glow-purple transition-all duration-300`}
+                    className={`p-3 bg-neo-surface border border-current rounded ${social.color} hover:shadow-glow-green transition-all duration-300`}
                   >
                     <social.icon className="w-6 h-6" />
                   </motion.a>
@@ -194,10 +201,10 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-neon-purple/20 bg-cyber-surface/30">
+      <footer className="py-8 border-t border-neo-green/20 bg-neo-surface/30">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-muted-foreground font-orbitron">
-            © 2024 CYBER DEV. Crafted with <span className="text-neon-pink">♥</span> in the digital realm.
+          <p className="text-muted-foreground font-neo tracking-wide">
+            © 2024 NEO TOKYO. Crafted in the digital realm <span className="text-neo-green">@NEOTOKYO_MTL</span>
           </p>
         </div>
       </footer>

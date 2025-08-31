@@ -2,66 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Cyberpunk Design System - All colors, gradients, fonts, etc defined here. 
+/* Neo Tokyo Cyberpunk Design System - All colors, gradients, fonts, etc defined here. 
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Cyberpunk Dark Theme */
-    --background: 225 15% 5%;
+    /* Neo Tokyo Dark Theme */
+    --background: 0 0% 0%;
     --foreground: 0 0% 95%;
 
-    --card: 225 20% 8%;
+    --card: 0 0% 5%;
     --card-foreground: 0 0% 95%;
 
-    --popover: 225 20% 8%;
+    --popover: 0 0% 5%;
     --popover-foreground: 0 0% 95%;
 
-    /* Neon Purple Primary */
-    --primary: 280 100% 70%;
-    --primary-foreground: 225 15% 5%;
+    /* Neo Tokyo Neon Green Primary */
+    --primary: 170 100% 50%;
+    --primary-foreground: 0 0% 0%;
 
-    /* Neon Pink Secondary */
-    --secondary: 320 100% 75%;
-    --secondary-foreground: 225 15% 5%;
+    /* Bright Cyan Secondary */
+    --secondary: 180 100% 50%;
+    --secondary-foreground: 0 0% 0%;
 
     /* Muted Dark */
-    --muted: 225 15% 12%;
+    --muted: 0 0% 8%;
     --muted-foreground: 0 0% 65%;
 
-    /* Neon Cyan Accent */
-    --accent: 180 100% 70%;
-    --accent-foreground: 225 15% 5%;
+    /* Neo Green Accent */
+    --accent: 170 100% 50%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 225 15% 15%;
-    --input: 225 15% 15%;
-    --ring: 280 100% 70%;
+    --border: 0 0% 10%;
+    --input: 0 0% 10%;
+    --ring: 170 100% 50%;
 
-    --radius: 0.75rem;
+    --radius: 0.25rem;
     
-    /* Cyberpunk Custom Colors */
-    --neon-purple: 280 100% 70%;
-    --neon-pink: 320 100% 75%;
-    --neon-cyan: 180 100% 70%;
-    --neon-green: 120 100% 70%;
-    --cyber-dark: 225 15% 5%;
-    --cyber-surface: 225 20% 8%;
-    --cyber-surface-hover: 225 20% 12%;
+    /* Neo Tokyo Custom Colors */
+    --neo-green: 170 100% 50%;
+    --neo-cyan: 180 100% 50%;
+    --neo-dark: 0 0% 0%;
+    --neo-surface: 0 0% 5%;
+    --neo-surface-hover: 0 0% 8%;
     
     /* Gradients */
-    --gradient-neon: linear-gradient(135deg, hsl(var(--neon-purple)), hsl(var(--neon-pink)));
-    --gradient-cyber: linear-gradient(135deg, hsl(var(--cyber-dark)), hsl(var(--cyber-surface)));
-    --gradient-glow: radial-gradient(circle at center, hsl(var(--neon-purple) / 0.3), transparent 70%);
+    --gradient-neon: linear-gradient(135deg, hsl(var(--neo-green)), hsl(var(--neo-cyan)));
+    --gradient-cyber: linear-gradient(135deg, hsl(var(--neo-dark)), hsl(var(--neo-surface)));
+    --gradient-glow: radial-gradient(circle at center, hsl(var(--neo-green) / 0.3), transparent 70%);
     
     /* Shadows & Glows */
-    --glow-purple: 0 0 20px hsl(var(--neon-purple) / 0.5);
-    --glow-pink: 0 0 20px hsl(var(--neon-pink) / 0.5);
-    --glow-cyan: 0 0 20px hsl(var(--neon-cyan) / 0.5);
-    --shadow-cyber: 0 8px 32px hsl(var(--cyber-dark) / 0.3);
+    --glow-green: 0 0 20px hsl(var(--neo-green) / 0.8), 0 0 40px hsl(var(--neo-green) / 0.4);
+    --glow-cyan: 0 0 20px hsl(var(--neo-cyan) / 0.8), 0 0 40px hsl(var(--neo-cyan) / 0.4);
+    --shadow-cyber: 0 8px 32px hsl(var(--neo-dark) / 0.8);
+    
+    /* Grid Pattern */
+    --grid-color: hsl(var(--neo-green) / 0.2);
+    --grid-size: 40px;
     
     /* Animations */
     --transition-glow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -130,5 +131,32 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    /* Neo Tokyo Grid Background */
+    background-image: 
+      linear-gradient(rgba(0, 255, 170, 0.15) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 170, 0.15) 1px, transparent 1px);
+    background-size: var(--grid-size) var(--grid-size);
+    background-attachment: fixed;
+  }
+  
+  /* Perspective Grid Effect */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      linear-gradient(
+        180deg, 
+        transparent 0%, 
+        rgba(0, 255, 170, 0.03) 50%,
+        rgba(0, 255, 170, 0.08) 100%
+      );
+    pointer-events: none;
+    z-index: -1;
+    transform: perspective(1000px) rotateX(60deg);
+    transform-origin: bottom;
   }
 }
