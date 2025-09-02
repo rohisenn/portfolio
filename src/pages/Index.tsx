@@ -3,7 +3,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ProjectCard from '@/components/ProjectCard';
 import { Button } from '@/components/ui/button';
-import { Mail, Github, Linkedin, Twitter, User, Briefcase } from 'lucide-react';
+import { Mail, Github, Linkedin, Instagram, User, Briefcase } from 'lucide-react';
 import neuralDashboard from '@/assets/neural-dashboard.jpg';
 import cyberEcommerce from '@/assets/cyber-ecommerce.jpg';
 import neonChat from '@/assets/neon-chat.jpg';
@@ -38,9 +38,9 @@ const Index = () => {
   ];
 
   const socialLinks = [
-    { name: 'GitHub', icon: Github, href: 'https://github.com/rohiths', color: 'text-neo-green' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/in/rohiths', color: 'text-neo-cyan' },
-    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/rohiths', color: 'text-neo-green' },
+    { name: 'GitHub', icon: Github, href: 'https://www.github.com/rohisenn', color: 'text-neo-green' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/rohith-s-7a20ba290/', color: 'text-neo-cyan' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/_rohisen/?igsh=MTZ6NDh4end1OGd4bQ%3D%3D#', color: 'text-neo-green' },
   ];
 
   return (

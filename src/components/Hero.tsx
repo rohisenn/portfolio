@@ -154,7 +154,7 @@ const Hero = () => {
               className="flex flex-col items-center text-muted-foreground"
             >
               <span className="text-sm font-neo mb-2 tracking-widest">SCROLL</span>
-              <ChevronDown className="w-4 h-4 text-neo-green animate-pulse" />
+              <ChevronDown className="w-4 h-4 text-neo-cyan animate-pulse" />
             </motion.div>
           </motion.div>
         </motion.div>
