@@ -82,14 +82,14 @@ const Hero = () => {
                 transition={{ duration: 2, repeat: Infinity }}
                 className="relative z-10"
               >
-                NEO TOKYO
+                ROHITH S
               </motion.span>
               {/* Glitch layers */}
               <span className="absolute inset-0 text-neo-cyan animate-neon-flicker opacity-20 translate-x-1">
-                NEO TOKYO
+                ROHITH S
               </span>
               <span className="absolute inset-0 text-neo-cyan animate-neon-flicker opacity-20 -translate-x-1">
-                NEO TOKYO
+                ROHITH S
               </span>
             </h1>
           </motion.div>
@@ -102,7 +102,7 @@ const Hero = () => {
             className="text-xl md:text-2xl text-muted-foreground mb-8 font-neo tracking-wide"
           >
             <Code2 className="inline w-6 h-6 text-neo-cyan mr-2" />
-            CYBERPUNK INSPIRED NOODLE BAR
+            FULL STACK DEVELOPER
             <Sparkles className="inline w-6 h-6 text-neo-green ml-2" />
           </motion.p>
 
@@ -112,8 +112,8 @@ const Hero = () => {
             transition={{ delay: 0.6, duration: 0.6 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 font-cyber"
           >
-            Experience the future of dining with our AI-powered noodle preparation 
-            and immersive cyberpunk atmosphere. Where tradition meets technology.
+            Crafting digital experiences with cutting-edge technologies and innovative solutions. 
+            Where creativity meets code in the cyberpunk realm of development.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -128,7 +128,7 @@ const Hero = () => {
               size="lg"
               className="bg-gradient-neon hover:shadow-glow-green text-neo-dark font-neo font-bold px-8 py-3 transition-all duration-300 hover:scale-105 text-lg tracking-wide"
             >
-              ENTER THE MATRIX
+              VIEW MY WORK
               <ChevronDown className="ml-2 w-4 h-4" />
             </Button>
             
@@ -137,7 +137,7 @@ const Hero = () => {
               size="lg"
               className="border-neo-cyan text-neo-cyan hover:bg-neo-cyan/10 hover:shadow-glow-cyan font-neo font-bold px-8 py-3 transition-all duration-300 hover:scale-105 text-lg tracking-wide"
             >
-              VIEW MENU
+              CONTACT ME
             </Button>
           </motion.div>
 
@@ -146,7 +146,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.6 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            className="absolute -bottom-8 left-1/2 transform -translate-x-1/2"
           >
             <motion.div
               animate={{ y: [0, 10, 0] }}

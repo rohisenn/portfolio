@@ -27,7 +27,7 @@ const Navbar = () => {
             transition={{ delay: 0.2 }}
             className="font-neo font-bold text-xl text-neo-green tracking-wider"
           >
-            &lt;/NEO TOKYO&gt;
+            &lt;/ROHITH S&gt;
           </motion.div>
 
           {/* Desktop Navigation */}
