@@ -39,7 +39,7 @@ const Navbar = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
-                className="flex items-center space-x-2 text-foreground hover:text-neo-green transition-all duration-300 relative group"
+                className="cursor-target flex items-center space-x-2 text-foreground hover:text-neo-green transition-all duration-300 relative group"
               >
                 <item.icon className="w-4 h-4 text-neo-cyan" />
                 <span className="font-neo text-lg tracking-wide">{item.name}</span>
@@ -52,7 +52,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-neo-green hover:text-neo-cyan transition-colors duration-300"
+              className="cursor-target text-neo-green hover:text-neo-cyan transition-colors duration-300"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -75,7 +75,7 @@ const Navbar = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.1 * index }}
                 onClick={() => setIsOpen(false)}
-                className="flex items-center space-x-3 py-3 text-foreground hover:text-neo-green transition-colors duration-300"
+                className="cursor-target flex items-center space-x-3 py-3 text-foreground hover:text-neo-green transition-colors duration-300"
               >
                 <item.icon className="w-4 h-4 text-neo-cyan" />
                 <span className="font-neo text-lg tracking-wide">{item.name}</span>

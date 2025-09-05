@@ -2,7 +2,10 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ProjectCard from '@/components/ProjectCard';
+import TargetCursor from '@/components/TargetCursor';
+import ProfileCard from '@/components/ProfileCard';
 import { Button } from '@/components/ui/button';
+import DecryptedText from '@/components/DecryptedText';
 import { Mail, Github, Linkedin, Instagram, User, Briefcase } from 'lucide-react';
 import neuralDashboard from '@/assets/neural-dashboard.jpg';
 import cyberEcommerce from '@/assets/cyber-ecommerce.jpg';
@@ -12,28 +15,28 @@ const Index = () => {
   // Portfolio projects
   const projects = [
     {
-      title: "AI Analytics Dashboard",
-      description: "A comprehensive analytics platform with real-time data visualization, machine learning insights, and predictive analytics for business intelligence.",
+      title: "Food Delivery Web App",
+      description: "A modern food delivery platform with real-time order tracking, secure payment integration, and role based authentication, and intuitive user interface for seamless food ordering experience.",
       image: neuralDashboard,
-      link: "https://rohiths-analytics.vercel.app",
-      github: "https://github.com/rohiths/ai-dashboard",
-      technologies: ["React", "TypeScript", "Python", "TensorFlow", "D3.js"]
+      link: "#",
+      github: "#",
+      technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe"]
     },
     {
-      title: "E-Commerce Platform",
-      description: "Modern e-commerce solution with advanced product filtering, secure payments, and responsive design optimized for performance.",
+      title: "Product Management System",
+      description: "Comprehensive product management solution with inventory tracking, analytics dashboard, and automated workflows for efficient business operations.",
       image: cyberEcommerce,
-      link: "https://rohiths-store.vercel.app",
-      github: "https://github.com/rohiths/ecommerce-platform",
-      technologies: ["Next.js", "Tailwind CSS", "Stripe", "PostgreSQL", "Prisma"]
+      link: "#",
+      github: "#",
+      technologies: ["React", "Javascript", "MySQL", "Spring-boot", "Tailwind CSS"]
     },
     {
-      title: "Real-Time Chat Application",
-      description: "Secure messaging platform with real-time communication, file sharing, and modern UI/UX design patterns.",
+      title: "Task Management Dashboard",
+      description: "Interactive task management application with drag-and-drop functionality, team collaboration features, and real-time progress tracking for enhanced productivity.",
       image: neonChat,
-      link: "https://rohiths-chat.vercel.app",
-      github: "https://github.com/rohiths/realtime-chat",
-      technologies: ["React", "Socket.io", "Node.js", "MongoDB", "JWT"]
+      link: "#",
+      github: "#",
+      technologies: ["React", "Redux", "Firebase", "Material-UI", "Chart.js"]
     }
   ];
 
@@ -53,6 +56,7 @@ const Index = () => {
            backgroundSize: '40px 40px'
          }}
     >
+      <TargetCursor spinDuration={2} hideDefaultCursor={true} />
       <Navbar />
       <Hero />
 
@@ -64,46 +68,128 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
+            className="w-full"
           >
             <div className="text-center mb-12">
               <h2 className="font-neo font-bold text-3xl md:text-4xl text-neo-green mb-4 tracking-widest">
                 <User className="inline w-8 h-8 mr-3 text-neo-cyan" />
-                ABOUT ME
+                <DecryptedText 
+                  text="ABOUT ME"
+                  animateOn="view"
+                  speed={100}
+                  maxIterations={15}
+                  sequential={true}
+                  className="text-neo-green"
+                  encryptedClassName="text-neo-cyan"
+                />
               </h2>
               <div className="w-20 h-1 bg-gradient-neon mx-auto"></div>
             </div>
 
-            <div className="bg-neo-surface/50 backdrop-blur-sm border border-neo-green/20 rounded p-8 hover:border-neo-green/50 transition-all duration-300">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h3 className="font-neo font-bold text-xl text-neo-cyan mb-4 tracking-wide">
-                    Full Stack Developer
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed mb-6">
-                    Welcome to my digital realm - where innovative code meets cutting-edge design. 
-                    I specialize in creating immersive web experiences and robust applications 
-                    that push the boundaries of modern technology.
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Every project is crafted with precision and passion, combining clean code 
-                    with stunning visuals. Building tomorrow's web, today.
-                  </p>
+            <div className="flex flex-col xl:flex-row items-start xl:justify-between gap-1 xl:gap-3">
+              <div className="w-full xl:w-3/5">
+                <div className="bg-neo-surface/50 backdrop-blur-sm border border-neo-green/20 rounded p-8 hover:border-neo-green/50 transition-all duration-300">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <h3 className="font-neo font-bold text-xl text-neo-cyan mb-4 tracking-wide">
+                        <DecryptedText 
+                          text="Full Stack Developer"
+                          animateOn="view"
+                          speed={80}
+                          maxIterations={12}
+                          sequential={true}
+                          className="text-neo-cyan"
+                          encryptedClassName="text-neo-green"
+                        />
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed mb-4">
+                        Welcome to my digital realm - where innovative code meets cutting-edge design. 
+                        I specialize in creating immersive web experiences and robust applications 
+                        that push the boundaries of modern technology.
+                      </p>
+                      
+                      <div className="bg-neo-dark/30 p-4 rounded border border-neo-cyan/20 mb-4">
+                        <h4 className="font-neo text-neo-green mb-2 tracking-wide text-sm">
+                          <DecryptedText 
+                            text="EDUCATION"
+                            animateOn="view"
+                            speed={60}
+                            maxIterations={10}
+                            sequential={true}
+                            className="text-neo-green"
+                            encryptedClassName="text-neo-cyan"
+                          />
+                        </h4>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          Currently pursuing <span className="text-neo-cyan font-semibold">M.Tech Computer Science & Engineering</span> 
+                          (5 Years Integrated) at <span className="text-neo-green font-semibold">Sri Krishna College of Engineering and Technology</span>, 
+                          Coimbatore, Tamil Nadu, India.
+                        </p>
+                      </div>
+
+                      <p className="text-muted-foreground leading-relaxed mb-6">
+                        With a passion for both frontend and backend development, I thrive on crafting seamless user experiences  
+                      </p>
+
+                    </div>
+                    <div className="space-y-4">
+                      <div className="bg-neo-green/10 p-4 rounded border border-neo-green/20">
+                        <h4 className="font-neo text-neo-green mb-2 tracking-wide">
+                          <DecryptedText 
+                            text="FRONTEND"
+                            animateOn="view"
+                            speed={60}
+                            maxIterations={10}
+                            sequential={true}
+                            className="text-neo-green"
+                            encryptedClassName="text-neo-cyan"
+                          />
+                        </h4>
+                        <p className="text-sm text-muted-foreground">React, TypeScript, Next.js, Tailwind CSS</p>
+                      </div>
+                      <div className="bg-neo-cyan/10 p-4 rounded border border-neo-cyan/20">
+                        <h4 className="font-neo text-neo-cyan mb-2 tracking-wide">
+                          <DecryptedText 
+                            text="BACKEND"
+                            animateOn="view"
+                            speed={60}
+                            maxIterations={10}
+                            sequential={true}
+                            className="text-neo-cyan"
+                            encryptedClassName="text-neo-green"
+                          />
+                        </h4>
+                        <p className="text-sm text-muted-foreground">Node.js, Python, PostgreSQL, MongoDB</p>
+                      </div>
+                      <div className="bg-neo-green/10 p-4 rounded border border-neo-green/20">
+                        <h4 className="font-neo text-neo-green mb-2 tracking-wide">
+                          <DecryptedText 
+                            text="TOOLS"
+                            animateOn="view"
+                            speed={60}
+                            maxIterations={10}
+                            sequential={true}
+                            className="text-neo-green"
+                            encryptedClassName="text-neo-cyan"
+                          />
+                        </h4>
+                        <p className="text-sm text-muted-foreground">Docker, AWS, Git, CI/CD, Figma</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="space-y-4">
-                  <div className="bg-neo-green/10 p-4 rounded border border-neo-green/20">
-                    <h4 className="font-neo text-neo-green mb-2 tracking-wide">FRONTEND</h4>
-                    <p className="text-sm text-muted-foreground">React, TypeScript, Next.js, Tailwind CSS</p>
-                  </div>
-                  <div className="bg-neo-cyan/10 p-4 rounded border border-neo-cyan/20">
-                    <h4 className="font-neo text-neo-cyan mb-2 tracking-wide">BACKEND</h4>
-                    <p className="text-sm text-muted-foreground">Node.js, Python, PostgreSQL, MongoDB</p>
-                  </div>
-                  <div className="bg-neo-green/10 p-4 rounded border border-neo-green/20">
-                    <h4 className="font-neo text-neo-green mb-2 tracking-wide">TOOLS</h4>
-                    <p className="text-sm text-muted-foreground">Docker, AWS, Git, CI/CD, Figma</p>
-                  </div>
-                </div>
+              </div>
+              
+              <div className="w-full xl:w-2/5 flex justify-center xl:justify-end">
+                <ProfileCard
+                  name="ROHITH S"
+                  title="Full Stack Developer"
+                  handle="rohiths"
+                  status="Available for Work"
+                  contactText="Contact Me"
+                  showUserInfo={true}
+                  enableTilt={true}
+                  onContactClick={() => window.open('mailto:rohithsenthil06@gmail.com?subject=Project Inquiry&body=Hi Rohith, I would like to discuss a project with you.')} behindGradient={undefined} innerGradient={undefined} miniAvatarUrl={undefined}                />
               </div>
             </div>
           </motion.div>
@@ -122,7 +208,15 @@ const Index = () => {
           >
             <h2 className="font-neo font-bold text-3xl md:text-4xl text-neo-green mb-4 tracking-widest">
               <Briefcase className="inline w-8 h-8 mr-3 text-neo-cyan" />
-              MY PROJECTS
+              <DecryptedText 
+                text="MY PROJECTS"
+                animateOn="view"
+                speed={100}
+                maxIterations={15}
+                sequential={true}
+                className="text-neo-green"
+                encryptedClassName="text-neo-cyan"
+              />
             </h2>
             <div className="w-20 h-1 bg-gradient-neon mx-auto mb-6"></div>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -158,7 +252,15 @@ const Index = () => {
           >
             <h2 className="font-neo font-bold text-3xl md:text-4xl text-neo-green mb-4 tracking-widest">
               <Mail className="inline w-8 h-8 mr-3 text-neo-cyan" />
-              GET IN TOUCH
+              <DecryptedText 
+                text="GET IN TOUCH"
+                animateOn="view"
+                speed={100}
+                maxIterations={15}
+                sequential={true}
+                className="text-neo-green"
+                encryptedClassName="text-neo-cyan"
+              />
             </h2>
             <div className="w-20 h-1 bg-gradient-neon mx-auto mb-8"></div>
             
@@ -171,7 +273,8 @@ const Index = () => {
               
               <Button
                 size="lg"
-                className="bg-gradient-neon hover:shadow-glow-green text-neo-dark font-neo font-bold px-8 py-3 mb-8 transition-all duration-300 hover:scale-105 text-lg tracking-wide"
+                className="cursor-target bg-gradient-neon hover:shadow-glow-green text-neo-dark font-neo font-bold px-8 py-3 mb-8 transition-all duration-300 hover:scale-105 text-lg tracking-wide"
+                onClick={() => window.open('mailto:rohithsenthil06@gmail.com?subject=Project Inquiry&body=Hi Rohith, I would like to discuss a project with you.')}
               >
                 <Mail className="mr-2 w-5 h-5" />
                 HIRE ME
@@ -189,7 +292,7 @@ const Index = () => {
                     transition={{ delay: index * 0.1 }}
                     whileHover={{ scale: 1.2, y: -5 }}
                     viewport={{ once: true }}
-                    className={`p-3 bg-neo-surface border border-current rounded ${social.color} hover:shadow-glow-green transition-all duration-300`}
+                    className={`cursor-target p-3 bg-neo-surface border border-current rounded ${social.color} hover:shadow-glow-green transition-all duration-300`}
                   >
                     <social.icon className="w-6 h-6" />
                   </motion.a>

@@ -60,7 +60,7 @@ const ProjectCard = ({ title, description, image, link, github, technologies }: 
 
       {/* Content */}
       <div className="p-6 relative z-10">
-        <h3 className="font-neo font-bold text-xl text-neo-green mb-2 group-hover:animate-glow-pulse tracking-wide">
+        <h3 className="font-neo font-bold text-xl text-neo-green mb-2 group-hover:text-neo-cyan transition-colors duration-500 tracking-wide">
           {title}
         </h3>
         <p className="text-muted-foreground mb-4 leading-relaxed">

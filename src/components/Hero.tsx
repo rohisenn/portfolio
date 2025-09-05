@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Code2, Sparkles } from 'lucide-react';
+import DecryptedText from './DecryptedText';
+import ScrambledText from './ScrambledText';
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -9,19 +11,6 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Animated background grid */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute inset-0" 
-             style={{
-               backgroundImage: `
-                 linear-gradient(rgba(0, 255, 170, 0.2) 1px, transparent 1px),
-                 linear-gradient(90deg, rgba(0, 255, 170, 0.2) 1px, transparent 1px)
-               `,
-               backgroundSize: '60px 60px'
-             }}
-        />
-      </div>
-
       {/* Floating geometric shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -94,27 +83,55 @@ const Hero = () => {
             </h1>
           </motion.div>
 
-          {/* Tagline */}
-          <motion.p
+          {/* Tagline with DecryptedText */}
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-xl md:text-2xl text-muted-foreground mb-8 font-neo tracking-wide"
+            className="text-xl md:text-2xl text-muted-foreground mb-8 font-neo tracking-wide flex items-center justify-center"
           >
-            <Code2 className="inline w-6 h-6 text-neo-cyan mr-2" />
-            FULL STACK DEVELOPER
-            <Sparkles className="inline w-6 h-6 text-neo-green ml-2" />
-          </motion.p>
+            <Code2 className="w-6 h-6 text-neo-cyan mr-2" />
+            <DecryptedText 
+              text="FULL STACK DEVELOPER"
+              animateOn="view"
+              speed={100}
+              maxIterations={15}
+              sequential={true}
+              className="text-neo-green"
+              encryptedClassName="text-neo-cyan"
+            />
+            <Sparkles className="w-6 h-6 text-neo-green ml-2" />
+          </motion.div>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 font-cyber"
+            className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4 font-cyber"
           >
-            Crafting digital experiences with cutting-edge technologies and innovative solutions. 
-            Where creativity meets code in the cyberpunk realm of development.
-          </motion.p>
+            <ScrambledText
+              radius={80}
+              duration={1.0}
+              speed={0.5}
+              scrambleChars="01"
+              className="text-muted-foreground"
+            >
+              Crafting digital experiences with cutting-edge technologies and innovative solutions. Where creativity meets development.
+            </ScrambledText>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.6 }}
+            className="text-sm text-neo-cyan max-w-xl mx-auto mb-10 font-neo tracking-wide"
+          >
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6">
+              <span>📍 COIMBATORE, INDIA</span>
+              <span className="hidden sm:block text-neo-green">|</span>
+              <span>🎓 M.TECH CSE @ SKCET</span>
+            </div>
+          </motion.div>
 
           {/* CTA Buttons */}
           <motion.div
@@ -126,7 +143,7 @@ const Hero = () => {
             <Button
               onClick={scrollToProjects}
               size="lg"
-              className="bg-gradient-neon hover:shadow-glow-green text-neo-dark font-neo font-bold px-8 py-3 transition-all duration-300 hover:scale-105 text-lg tracking-wide"
+              className="cursor-target bg-gradient-neon hover:shadow-glow-green text-neo-dark font-neo font-bold px-8 py-3 transition-all duration-300 hover:scale-105 text-lg tracking-wide"
             >
               VIEW MY WORK
               <ChevronDown className="ml-2 w-4 h-4" />
@@ -135,7 +152,7 @@ const Hero = () => {
             <Button
               variant="outline"
               size="lg"
-              className="border-neo-cyan text-neo-cyan hover:bg-neo-cyan/10 hover:shadow-glow-cyan font-neo font-bold px-8 py-3 transition-all duration-300 hover:scale-105 text-lg tracking-wide"
+              className="cursor-target border-neo-cyan text-neo-cyan hover:bg-neo-cyan/10 hover:shadow-glow-cyan font-neo font-bold px-8 py-3 transition-all duration-300 hover:scale-105 text-lg tracking-wide"
             >
               CONTACT ME
             </Button>
