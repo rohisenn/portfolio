@@ -6,6 +6,8 @@ import TargetCursor from '@/components/TargetCursor';
 import ProfileCard from '@/components/ProfileCard';
 import { Button } from '@/components/ui/button';
 import DecryptedText from '@/components/DecryptedText';
+import InteractiveBackground from '@/components/InteractiveBackground';
+import InteractiveElements from '@/components/InteractiveElements';
 import { Mail, Github, Linkedin, Instagram, User, Briefcase } from 'lucide-react';
 import neuralDashboard from '@/assets/neural-dashboard.jpg';
 import cyberEcommerce from '@/assets/cyber-ecommerce.jpg';
@@ -47,7 +49,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-neo-dark text-foreground"
+    <div className="min-h-screen bg-neo-dark text-foreground relative overflow-hidden"
          style={{
            backgroundImage: `
              linear-gradient(rgba(0, 255, 170, 0.05) 1px, transparent 1px),
@@ -56,6 +58,8 @@ const Index = () => {
            backgroundSize: '40px 40px'
          }}
     >
+      <InteractiveBackground />
+      <InteractiveElements />
       <TargetCursor spinDuration={2} hideDefaultCursor={true} />
       <Navbar />
       <Hero />
@@ -271,14 +275,24 @@ const Index = () => {
                 projects and explore new technological frontiers.
               </p>
               
-              <Button
-                size="lg"
-                className="cursor-target bg-gradient-neon hover:shadow-glow-green text-neo-dark font-neo font-bold px-8 py-3 mb-8 transition-all duration-300 hover:scale-105 text-lg tracking-wide"
-                onClick={() => window.open('mailto:rohithsenthil06@gmail.com?subject=Project Inquiry&body=Hi Rohith, I would like to discuss a project with you.')}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <Mail className="mr-2 w-5 h-5" />
-                HIRE ME
-              </Button>
+                <Button
+                  size="lg"
+                  className="cursor-target ripple bg-gradient-neon hover:shadow-glow-green text-neo-dark font-neo font-bold px-8 py-3 mb-8 transition-all duration-300 hover:scale-105 text-lg tracking-wide pulse-glow"
+                  onClick={() => window.open('mailto:rohithsenthil06@gmail.com?subject=Project Inquiry&body=Hi Rohith, I would like to discuss a project with you.')}
+                >
+                  <motion.div
+                    animate={{ rotate: [0, 360] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                  >
+                    <Mail className="mr-2 w-5 h-5" />
+                  </motion.div>
+                  HIRE ME
+                </Button>
+              </motion.div>
 
               <div className="flex justify-center space-x-6">
                 {socialLinks.map((social, index) => (
@@ -290,11 +304,22 @@ const Index = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    whileHover={{ scale: 1.2, y: -5 }}
+                    whileHover={{ 
+                      scale: 1.2, 
+                      y: -5,
+                      rotate: [0, -10, 10, 0],
+                      boxShadow: "0 0 20px hsl(170 100% 50% / 0.6)"
+                    }}
+                    whileTap={{ scale: 0.9 }}
                     viewport={{ once: true }}
-                    className={`cursor-target p-3 bg-neo-surface border border-current rounded ${social.color} hover:shadow-glow-green transition-all duration-300`}
+                    className={`cursor-target p-3 bg-neo-surface border border-current rounded ${social.color} hover:shadow-glow-green transition-all duration-300 ripple neon-border pulse-glow`}
                   >
-                    <social.icon className="w-6 h-6" />
+                    <motion.div
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <social.icon className="w-6 h-6" />
+                    </motion.div>
                   </motion.a>
                 ))}
               </div>

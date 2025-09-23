@@ -69,7 +69,9 @@ const Hero = () => {
               <motion.span
                 animate={{ opacity: [1, 0.8, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="relative z-10"
+                className="relative z-10 glitch-text cursor-pointer"
+                data-text="ROHITH S"
+                whileHover={{ scale: 1.05 }}
               >
                 ROHITH S
               </motion.span>
@@ -143,7 +145,7 @@ const Hero = () => {
             <Button
               onClick={scrollToProjects}
               size="lg"
-              className="cursor-target bg-gradient-neon hover:shadow-glow-green text-neo-dark font-neo font-bold px-8 py-3 transition-all duration-300 hover:scale-105 text-lg tracking-wide"
+              className="cursor-target ripple bg-gradient-neon hover:shadow-glow-green text-neo-dark font-neo font-bold px-8 py-3 transition-all duration-300 hover:scale-105 text-lg tracking-wide pulse-glow"
             >
               VIEW MY WORK
               <ChevronDown className="ml-2 w-4 h-4" />
@@ -152,7 +154,7 @@ const Hero = () => {
             <Button
               variant="outline"
               size="lg"
-              className="cursor-target border-neo-cyan text-neo-cyan hover:bg-neo-cyan/10 hover:shadow-glow-cyan font-neo font-bold px-8 py-3 transition-all duration-300 hover:scale-105 text-lg tracking-wide"
+              className="cursor-target ripple cyber-button hover:shadow-glow-cyan font-neo font-bold px-8 py-3 text-lg tracking-wide"
             >
               CONTACT ME
             </Button>
