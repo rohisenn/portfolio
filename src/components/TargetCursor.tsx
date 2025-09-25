@@ -1,8 +1,8 @@
 import { useEffect, useRef, useCallback, useMemo } from 'react';
 
 const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hideDefaultCursor = true }) => {
-  const cursorRef = useRef(null);
-  const cornersRef = useRef(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const cornersRef = useRef<NodeListOf<HTMLElement> | null>(null);
   const spinTl = useRef(null);
   const dotRef = useRef(null);
   const constants = useMemo(
@@ -100,7 +100,7 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
         const cursorCenterX = cursorRect.left + cursorRect.width / 2;
         const cursorCenterY = cursorRect.top + cursorRect.height / 2;
 
-        const corners = Array.from(cornersRef.current);
+        const corners = Array.from(cornersRef.current!) as HTMLElement[];
         const { borderWidth, cornerSize } = constants;
 
         const offsets = [
@@ -116,7 +116,7 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
       };
 
       isAnimatingToTarget = true;
-      updateCorners();
+      updateCorners(0, 0);
 
       setTimeout(() => {
         isAnimatingToTarget = false;
@@ -132,7 +132,7 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
         isAnimatingToTarget = false;
 
         if (cornersRef.current) {
-          const corners = Array.from(cornersRef.current);
+          const corners = Array.from(cornersRef.current) as HTMLElement[];
           const { cornerSize } = constants;
           const positions = [
             { x: -cornerSize * 1.5, y: -cornerSize * 1.5 },

@@ -25,7 +25,9 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="font-neo font-bold text-xl text-neo-green tracking-wider"
+            whileHover={{ scale: 1.05 }}
+            className="font-neo font-bold text-xl text-neo-green tracking-wider cursor-pointer pulse-glow glitch-text"
+            data-text="</ROHITH S>"
           >
             &lt;/ROHITH S&gt;
           </motion.div>
@@ -39,10 +41,17 @@ const Navbar = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
-                className="cursor-target flex items-center space-x-2 text-foreground hover:text-neo-green transition-all duration-300 relative group"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="cursor-target flex items-center space-x-2 text-foreground hover:text-neo-green transition-all duration-300 relative group ripple"
               >
-                <item.icon className="w-4 h-4 text-neo-cyan" />
-                <span className="font-neo text-lg tracking-wide">{item.name}</span>
+                <motion.div
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <item.icon className="w-4 h-4 text-neo-cyan" />
+                </motion.div>
+                <span className="font-neo text-lg tracking-wide glitch-text" data-text={item.name}>{item.name}</span>
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-neon group-hover:w-full transition-all duration-300" />
               </motion.a>
             ))}
