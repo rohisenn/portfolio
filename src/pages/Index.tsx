@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import ScrambledText from '@/components/ScrambledText';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ProjectCard from '@/components/ProjectCard';
@@ -47,18 +48,123 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-neo-dark text-foreground"
-         style={{
-           backgroundImage: `
-             linear-gradient(rgba(0, 255, 170, 0.05) 1px, transparent 1px),
-             linear-gradient(90deg, rgba(0, 255, 170, 0.05) 1px, transparent 1px)
-           `,
-           backgroundSize: '40px 40px'
-         }}
-    >
-      <TargetCursor spinDuration={2} hideDefaultCursor={true} />
-      <Navbar />
-      <Hero />
+    <div className="min-h-screen bg-neo-dark text-foreground relative">
+      {/* Floating Interactive Elements */}
+      <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
+        {/* Binary Code Streams */}
+        <motion.div
+          animate={{ 
+            y: [0, -100, 0],
+            opacity: [0.2, 0.6, 0.2]
+          }}
+          transition={{ 
+            duration: 8,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute top-10 left-10 text-neo-green text-xs font-mono opacity-30"
+        >
+          01001000<br/>11010110<br/>00110101
+        </motion.div>
+        
+        {/* Interactive Geometric Shapes */}
+        <motion.div
+          animate={{ 
+            y: [0, -30, 0],
+            rotate: [0, 120, 240, 360],
+            scale: [1, 1.2, 1]
+          }}
+          whileHover={{ scale: 1.5, rotate: 180 }}
+          transition={{ 
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-16 left-16 w-6 h-6 border-2 border-neo-green cursor-pointer"
+          style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)', pointerEvents: 'auto' }}
+        />
+        
+        {/* Glowing Orbs */}
+        <motion.div
+          animate={{ 
+            y: [0, -35, 0],
+            scale: [1, 1.4, 0.8, 1],
+            opacity: [0.4, 0.8, 0.4]
+          }}
+          whileHover={{ 
+            scale: 2,
+            boxShadow: '0 0 30px rgba(0, 255, 170, 0.8)'
+          }}
+          transition={{ 
+            duration: 11,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-3/4 left-20 w-6 h-6 bg-neo-green/30 border-2 border-neo-green rounded-full cursor-pointer"
+          style={{ pointerEvents: 'auto' }}
+        />
+        
+        {/* Circuit Lines */}
+        <motion.div
+          animate={{ 
+            scaleX: [0, 1, 0],
+            opacity: [0, 0.6, 0]
+          }}
+          transition={{ 
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/3 left-0 w-32 h-0.5 bg-gradient-to-r from-transparent via-neo-green to-transparent"
+        />
+        
+        {/* Floating Data Blocks */}
+        <motion.div
+          animate={{ 
+            y: [0, -50, 0],
+            rotate: [0, 5, -5, 0],
+            opacity: [0.3, 0.7, 0.3]
+          }}
+          whileHover={{ 
+            scale: 1.1,
+            rotate: 10,
+            borderColor: 'rgba(0, 255, 170, 1)'
+          }}
+          transition={{ 
+            duration: 16,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/2 right-1/4 w-8 h-8 border border-neo-green/40 bg-neo-green/5 cursor-pointer flex items-center justify-center"
+          style={{ pointerEvents: 'auto' }}
+        >
+          <div className="text-xs text-neo-green font-mono">01</div>
+        </motion.div>
+        
+        {/* Pulsing Network Nodes */}
+        <motion.div
+          animate={{ 
+            scale: [1, 1.5, 1],
+            opacity: [0.4, 0.9, 0.4]
+          }}
+          whileHover={{ 
+            scale: 2,
+            opacity: 1,
+            boxShadow: '0 0 40px rgba(0, 255, 170, 0.9)'
+          }}
+          transition={{ 
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/4 left-1/2 w-3 h-3 bg-neo-green rounded-full cursor-pointer"
+          style={{ pointerEvents: 'auto' }}
+        />
+      </div>
+      <div className="relative z-20">
+        <TargetCursor spinDuration={2} hideDefaultCursor={true} />
+        <Navbar />
+        <Hero />
 
       {/* About Section */}
       <section id="about" className="py-20 relative">
@@ -102,11 +208,19 @@ const Index = () => {
                           encryptedClassName="text-neo-green"
                         />
                       </h3>
-                      <p className="text-muted-foreground leading-relaxed mb-4">
-                        Welcome to my digital realm - where innovative code meets cutting-edge design. 
-                        I specialize in creating immersive web experiences and robust applications 
-                        that push the boundaries of modern technology.
-                      </p>
+                      <ScrambledText
+                        radius={80}
+                        duration={1.0}
+                        speed={0.5}
+                        scrambleChars="01"
+                        className="text-muted-foreground"
+                      >
+                        <p className="text-muted-foreground leading-relaxed mb-4">
+                          Welcome to my digital realm - where innovative code meets cutting-edge design. 
+                          I specialize in creating immersive web experiences and robust applications 
+                          that push the boundaries of modern technology.
+                        </p>
+                      </ScrambledText>
                       
                       <div className="bg-neo-dark/30 p-4 rounded border border-neo-cyan/20 mb-4">
                         <h4 className="font-neo text-neo-green mb-2 tracking-wide text-sm">
@@ -120,16 +234,32 @@ const Index = () => {
                             encryptedClassName="text-neo-cyan"
                           />
                         </h4>
-                        <p className="text-muted-foreground text-sm leading-relaxed">
-                          Currently pursuing <span className="text-neo-cyan font-semibold">M.Tech Computer Science & Engineering</span> 
-                          (5 Years Integrated) at <span className="text-neo-green font-semibold">Sri Krishna College of Engineering and Technology</span>, 
-                          Coimbatore, Tamil Nadu, India.
-                        </p>
+                        <ScrambledText
+                          radius={80}
+                          duration={1.0}
+                          speed={0.5}
+                          scrambleChars="01"
+                          className="text-muted-foreground"
+                        >
+                          <p className="text-muted-foreground text-sm leading-relaxed">
+                            Currently pursuing <span className="text-neo-cyan font-semibold">M.Tech Computer Science & Engineering</span> 
+                            (5 Years Integrated) at <span className="text-neo-green font-semibold">Sri Krishna College of Engineering and Technology</span>, 
+                            Coimbatore, Tamil Nadu, India.
+                          </p>
+                        </ScrambledText>
                       </div>
 
-                      <p className="text-muted-foreground leading-relaxed mb-6">
-                        With a passion for both frontend and backend development, I thrive on crafting seamless user experiences  
-                      </p>
+                      <ScrambledText
+                        radius={80}
+                        duration={1.0}
+                        speed={0.5}
+                        scrambleChars="01"
+                        className="text-muted-foreground"
+                      >
+                        <p className="text-muted-foreground leading-relaxed mb-6">
+                          With a passion for both frontend and backend development, I thrive on crafting seamless user experiences  
+                        </p>
+                      </ScrambledText>
 
                     </div>
                     <div className="space-y-4">
@@ -145,7 +275,15 @@ const Index = () => {
                             encryptedClassName="text-neo-cyan"
                           />
                         </h4>
-                        <p className="text-sm text-muted-foreground">React, TypeScript, Next.js, Tailwind CSS</p>
+                        <ScrambledText
+                          radius={80}
+                          duration={1.0}
+                          speed={0.5}
+                          scrambleChars="01"
+                          className="text-muted-foreground"
+                        >
+                          <p className="text-sm text-muted-foreground">React, TypeScript, Next.js, Tailwind CSS</p>
+                        </ScrambledText>
                       </div>
                       <div className="bg-neo-cyan/10 p-4 rounded border border-neo-cyan/20">
                         <h4 className="font-neo text-neo-cyan mb-2 tracking-wide">
@@ -159,7 +297,15 @@ const Index = () => {
                             encryptedClassName="text-neo-green"
                           />
                         </h4>
-                        <p className="text-sm text-muted-foreground">Node.js, Python, PostgreSQL, MongoDB</p>
+                        <ScrambledText
+                          radius={80}
+                          duration={1.0}
+                          speed={0.5}
+                          scrambleChars="01"
+                          className="text-muted-foreground"
+                        >
+                          <p className="text-sm text-muted-foreground">Node.js, Python, PostgreSQL, MongoDB</p>
+                        </ScrambledText>
                       </div>
                       <div className="bg-neo-green/10 p-4 rounded border border-neo-green/20">
                         <h4 className="font-neo text-neo-green mb-2 tracking-wide">
@@ -173,7 +319,15 @@ const Index = () => {
                             encryptedClassName="text-neo-cyan"
                           />
                         </h4>
-                        <p className="text-sm text-muted-foreground">Docker, AWS, Git, CI/CD, Figma</p>
+                        <ScrambledText
+                          radius={80}
+                          duration={1.0}
+                          speed={0.5}
+                          scrambleChars="01"
+                          className="text-muted-foreground"
+                        >
+                          <p className="text-sm text-muted-foreground">Docker, AWS, Git, CI/CD, Figma</p>
+                        </ScrambledText>
                       </div>
                     </div>
                   </div>
@@ -219,9 +373,17 @@ const Index = () => {
               />
             </h2>
             <div className="w-20 h-1 bg-gradient-neon mx-auto mb-6"></div>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Explore my portfolio of innovative web applications and digital solutions
-            </p>
+            <ScrambledText
+              radius={80}
+              duration={1.0}
+              speed={0.5}
+              scrambleChars="01"
+              className="text-muted-foreground"
+            >
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Explore my portfolio of innovative web applications and digital solutions
+              </p>
+            </ScrambledText>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -265,11 +427,19 @@ const Index = () => {
             <div className="w-20 h-1 bg-gradient-neon mx-auto mb-8"></div>
             
             <div className="bg-neo-surface/50 backdrop-blur-sm border border-neo-green/20 rounded p-8 hover:border-neo-green/50 transition-all duration-300">
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                Ready to bring your digital vision to life? Let's collaborate and create 
-                something extraordinary together. I'm always excited to work on innovative 
-                projects and explore new technological frontiers.
-              </p>
+              <ScrambledText
+                radius={80}
+                duration={1.0}
+                speed={0.5}
+                scrambleChars="01"
+                className="text-muted-foreground"
+              >
+                <p className="text-muted-foreground mb-8 leading-relaxed">
+                  Ready to bring your digital vision to life? Let's collaborate and create 
+                  something extraordinary together. I'm always excited to work on innovative 
+                  projects and explore new technological frontiers.
+                </p>
+              </ScrambledText>
               
               <Button
                 size="lg"
@@ -306,11 +476,20 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 border-t border-neo-green/20 bg-neo-surface/30">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-muted-foreground font-neo tracking-wide">
-            © 2024 ROHITH S. Crafted in the digital realm <span className="text-neo-green">@ROHITHS</span>
-          </p>
+          <ScrambledText
+            radius={80}
+            duration={1.0}
+            speed={0.5}
+            scrambleChars="01"
+            className="text-muted-foreground"
+          >
+            <p className="text-muted-foreground font-neo tracking-wide">
+              © 2024 ROHITH S. Crafted in the digital realm <span className="text-neo-green">@ROHITHS</span>
+            </p>
+          </ScrambledText>
         </div>
       </footer>
+      </div>
     </div>
   );
 };

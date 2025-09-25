@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
+import { WobbleCard } from './ui/wobble-card';
 
 interface ProjectCardProps {
   title: string;
@@ -12,20 +13,19 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, description, image, link, github, technologies }: ProjectCardProps) => {
   return (
-    <motion.div
-      whileHover={{ scale: 1.02, y: -5 }}
-      whileTap={{ scale: 0.98 }}
-      className="group relative bg-neo-surface/50 backdrop-blur-sm rounded border border-neo-green/20 overflow-hidden hover:border-neo-green/50 transition-all duration-300"
+    <WobbleCard
+      containerClassName="group relative bg-neo-surface/80 backdrop-blur-sm border border-neo-green/20 hover:border-neo-green/50 transition-all duration-300 min-h-[400px]"
+      className="p-0"
     >
       {/* Glow effect on hover */}
       <div className="absolute inset-0 bg-gradient-glow opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       
       {/* Image */}
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-48 overflow-hidden rounded-t-2xl">
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+          className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-neo-dark/80 to-transparent" />
         
@@ -59,7 +59,7 @@ const ProjectCard = ({ title, description, image, link, github, technologies }: 
       </div>
 
       {/* Content */}
-      <div className="p-6 relative z-10">
+      <div className="p-6 relative z-10 bg-neo-surface/90 backdrop-blur-sm">
         <h3 className="font-neo font-bold text-xl text-neo-green mb-2 group-hover:text-neo-cyan transition-colors duration-500 tracking-wide">
           {title}
         </h3>
@@ -86,7 +86,7 @@ const ProjectCard = ({ title, description, image, link, github, technologies }: 
              boxShadow: '0 0 20px rgba(0, 255, 170, 0.6), inset 0 0 20px rgba(0, 255, 170, 0.2)' 
            }} 
       />
-    </motion.div>
+    </WobbleCard>
   );
 };
 

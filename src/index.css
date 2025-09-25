@@ -159,4 +159,9 @@ All colors MUST be HSL.
     transform: perspective(1000px) rotateX(60deg);
     transform-origin: bottom;
   }
+  
+  /* Apply Share Tech Mono to all paragraphs */
+  p {
+    font-family: 'Share Tech Mono', monospace !important;
+  }
 }
