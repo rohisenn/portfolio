@@ -345,31 +345,22 @@ All colors MUST be HSL.
     animation: cyber-slide 2s linear infinite;
   }
   
-  /* Apply Share Tech Mono to all paragraphs */
+  /* Apply Share Tech Mono to all paragraphs with proper alignment */
   p {
-    font-family: 'Share Tech Mono', monospace !important;
-    word-break: normal !important;
-    overflow-wrap: normal !important;
-    hyphens: none !important;
-    line-height: 1.6 !important;
-    text-align: left !important;
-    white-space: normal !important;
-    word-spacing: normal !important;
-    letter-spacing: normal !important;
-    text-justify: none !important;
-  }
-  /* Ensure all paragraphs are justified and aligned */
-  p, .scrambled-text {
+    font-family: 'Share Tech Mono', monospace;
+    line-height: 1.7;
     text-align: justify;
     text-justify: inter-word;
     word-break: break-word;
+    overflow-wrap: break-word;
     hyphens: auto;
+    white-space: normal;
   }
-
   
   /* Center aligned text */
   .text-center p {
     text-align: center;
+    text-justify: none;
   }
   
 
