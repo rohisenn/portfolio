@@ -348,5 +348,29 @@ All colors MUST be HSL.
   /* Apply Share Tech Mono to all paragraphs */
   p {
     font-family: 'Share Tech Mono', monospace !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+    line-height: 1.6 !important;
+    text-align: left !important;
+    white-space: normal !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+    text-justify: none !important;
   }
+  /* Ensure all paragraphs are justified and aligned */
+  p, .scrambled-text {
+    text-align: justify;
+    text-justify: inter-word;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  
+  /* Center aligned text */
+  .text-center p {
+    text-align: center;
+  }
+  
+
 }

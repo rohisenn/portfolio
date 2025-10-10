@@ -109,7 +109,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4 font-cyber"
+            className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4 font-cyber text-left"
           >
             <ScrambledText
               radius={80}
@@ -118,7 +118,8 @@ const Hero = () => {
               scrambleChars="01"
               className="text-muted-foreground"
             >
-              Crafting digital experiences with cutting-edge technologies and innovative solutions. Where creativity meets development.
+              Crafting digital experiences with cutting-edge technologies and 
+              innovative solutions. Where creativity meets development.
             </ScrambledText>
           </motion.div>
 
@@ -145,7 +146,7 @@ const Hero = () => {
             <Button
               onClick={scrollToProjects}
               size="lg"
-              className="cursor-target ripple bg-gradient-neon hover:shadow-glow-green text-neo-dark font-neo font-bold px-8 py-3 transition-all duration-300 hover:scale-105 text-lg tracking-wide pulse-glow"
+              className="cursor-target ripple bg-gradient-neon hover:shadow-glow-green text-neo-dark font-neo font-bold px-8 py-3 transition-all   hover:scale-105 text-lg tracking-wide pulse-glow"
             >
               VIEW MY WORK
               <ChevronDown className="ml-2 w-4 h-4" />

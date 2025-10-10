@@ -80,7 +80,12 @@ const ScrambledText = ({
       className={`scrambled-text ${className}`}
       style={style}
     >
-      <p>{children}</p>
+        <p
+          className={className ? `${className} scrambled-text` : 'scrambled-text'}
+          style={style}
+        >
+          {children}
+        </p>
     </div>
   );
 };

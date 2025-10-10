@@ -7,8 +7,10 @@ import TargetCursor from '@/components/TargetCursor';
 import ProfileCard from '@/components/ProfileCard';
 import { Button } from '@/components/ui/button';
 import DecryptedText from '@/components/DecryptedText';
-import InteractiveBackground from '@/components/InteractiveBackground';
-import InteractiveElements from '@/components/InteractiveElements';
+
+import SpaceClothGrid from '@/components/SpaceClothGrid';
+import InteractiveParticles from '@/components/InteractiveParticles';
+import Resume from '@/components/Resume';
 import { Mail, Github, Linkedin, Instagram, User, Briefcase } from 'lucide-react';
 import neuralDashboard from '@/assets/neural-dashboard.jpg';
 import cyberEcommerce from '@/assets/cyber-ecommerce.jpg';
@@ -50,8 +52,9 @@ const Index = () => {
   ];
 
   return (
-<<<<<<< HEAD
     <div className="min-h-screen bg-neo-dark text-foreground relative">
+      <SpaceClothGrid />
+      <InteractiveParticles />
       {/* Floating Interactive Elements */}
       <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
         {/* Binary Code Streams */}
@@ -168,22 +171,6 @@ const Index = () => {
         <TargetCursor spinDuration={2} hideDefaultCursor={true} />
         <Navbar />
         <Hero />
-=======
-    <div className="min-h-screen bg-neo-dark text-foreground relative overflow-hidden"
-         style={{
-           backgroundImage: `
-             linear-gradient(rgba(0, 255, 170, 0.05) 1px, transparent 1px),
-             linear-gradient(90deg, rgba(0, 255, 170, 0.05) 1px, transparent 1px)
-           `,
-           backgroundSize: '40px 40px'
-         }}
-    >
-      <InteractiveBackground />
-      <InteractiveElements />
-      <TargetCursor spinDuration={2} hideDefaultCursor={true} />
-      <Navbar />
-      <Hero />
->>>>>>> 070ea9452abf42a494bea36cee316868655dcbd8
 
       {/* About Section */}
       <section id="about" className="py-20 relative">
@@ -198,15 +185,7 @@ const Index = () => {
             <div className="text-center mb-12">
               <h2 className="font-neo font-bold text-3xl md:text-4xl text-neo-green mb-4 tracking-widest">
                 <User className="inline w-8 h-8 mr-3 text-neo-cyan" />
-                <DecryptedText 
-                  text="ABOUT ME"
-                  animateOn="view"
-                  speed={100}
-                  maxIterations={15}
-                  sequential={true}
-                  className="text-neo-green"
-                  encryptedClassName="text-neo-cyan"
-                />
+                ABOUT ME
               </h2>
               <div className="w-20 h-1 bg-gradient-neon mx-auto"></div>
             </div>
@@ -234,7 +213,7 @@ const Index = () => {
                         scrambleChars="01"
                         className="text-muted-foreground"
                       >
-                        <p className="text-muted-foreground leading-relaxed mb-4">
+                        <p className="text-muted-foreground leading-relaxed mb-4 text-left text-wrap-better">
                           Welcome to my digital realm - where innovative code meets cutting-edge design. 
                           I specialize in creating immersive web experiences and robust applications 
                           that push the boundaries of modern technology.
@@ -260,7 +239,7 @@ const Index = () => {
                           scrambleChars="01"
                           className="text-muted-foreground"
                         >
-                          <p className="text-muted-foreground text-sm leading-relaxed">
+                          <p className="text-muted-foreground text-sm leading-relaxed text-left text-wrap-better">
                             Currently pursuing <span className="text-neo-cyan font-semibold">M.Tech Computer Science & Engineering</span> 
                             (5 Years Integrated) at <span className="text-neo-green font-semibold">Sri Krishna College of Engineering and Technology</span>, 
                             Coimbatore, Tamil Nadu, India.
@@ -275,7 +254,7 @@ const Index = () => {
                         scrambleChars="01"
                         className="text-muted-foreground"
                       >
-                        <p className="text-muted-foreground leading-relaxed mb-6">
+                        <p className="text-muted-foreground leading-relaxed mb-6 text-left text-wrap-better">
                           With a passion for both frontend and backend development, I thrive on crafting seamless user experiences  
                         </p>
                       </ScrambledText>
@@ -301,7 +280,7 @@ const Index = () => {
                           scrambleChars="01"
                           className="text-muted-foreground"
                         >
-                          <p className="text-sm text-muted-foreground">React, TypeScript, Next.js, Tailwind CSS</p>
+                          <p className="text-sm text-muted-foreground text-left">React, TypeScript, Next.js, Tailwind CSS</p>
                         </ScrambledText>
                       </div>
                       <div className="bg-neo-cyan/10 p-4 rounded border border-neo-cyan/20">
@@ -323,7 +302,7 @@ const Index = () => {
                           scrambleChars="01"
                           className="text-muted-foreground"
                         >
-                          <p className="text-sm text-muted-foreground">Node.js, Python, PostgreSQL, MongoDB</p>
+                          <p className="text-sm text-muted-foreground text-left">Node.js, Python, PostgreSQL, MongoDB</p>
                         </ScrambledText>
                       </div>
                       <div className="bg-neo-green/10 p-4 rounded border border-neo-green/20">
@@ -345,7 +324,7 @@ const Index = () => {
                           scrambleChars="01"
                           className="text-muted-foreground"
                         >
-                          <p className="text-sm text-muted-foreground">Docker, AWS, Git, CI/CD, Figma</p>
+                          <p className="text-sm text-muted-foreground text-left">Docker, AWS, Git, CI/CD, Figma</p>
                         </ScrambledText>
                       </div>
                     </div>
@@ -369,6 +348,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Resume Section */}
+      <Resume />
+
       {/* Projects Section */}
       <section id="projects" className="py-20 relative">
         <div className="container mx-auto px-4">
@@ -381,15 +363,7 @@ const Index = () => {
           >
             <h2 className="font-neo font-bold text-3xl md:text-4xl text-neo-green mb-4 tracking-widest">
               <Briefcase className="inline w-8 h-8 mr-3 text-neo-cyan" />
-              <DecryptedText 
-                text="MY PROJECTS"
-                animateOn="view"
-                speed={100}
-                maxIterations={15}
-                sequential={true}
-                className="text-neo-green"
-                encryptedClassName="text-neo-cyan"
-              />
+              MY PROJECTS
             </h2>
             <div className="w-20 h-1 bg-gradient-neon mx-auto mb-6"></div>
             <ScrambledText
@@ -399,7 +373,7 @@ const Index = () => {
               scrambleChars="01"
               className="text-muted-foreground"
             >
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-muted-foreground max-w-2xl mx-auto text-left">
                 Explore my portfolio of innovative web applications and digital solutions
               </p>
             </ScrambledText>
@@ -433,15 +407,7 @@ const Index = () => {
           >
             <h2 className="font-neo font-bold text-3xl md:text-4xl text-neo-green mb-4 tracking-widest">
               <Mail className="inline w-8 h-8 mr-3 text-neo-cyan" />
-              <DecryptedText 
-                text="GET IN TOUCH"
-                animateOn="view"
-                speed={100}
-                maxIterations={15}
-                sequential={true}
-                className="text-neo-green"
-                encryptedClassName="text-neo-cyan"
-              />
+              GET IN TOUCH
             </h2>
             <div className="w-20 h-1 bg-gradient-neon mx-auto mb-8"></div>
             
@@ -453,7 +419,7 @@ const Index = () => {
                 scrambleChars="01"
                 className="text-muted-foreground"
               >
-                <p className="text-muted-foreground mb-8 leading-relaxed">
+                <p className="text-muted-foreground mb-8 leading-relaxed text-base tracking-normal text-left">
                   Ready to bring your digital vision to life? Let's collaborate and create 
                   something extraordinary together. I'm always excited to work on innovative 
                   projects and explore new technological frontiers.
@@ -466,15 +432,10 @@ const Index = () => {
               >
                 <Button
                   size="lg"
-                  className="cursor-target ripple bg-gradient-neon hover:shadow-glow-green text-neo-dark font-neo font-bold px-8 py-3 mb-8 transition-all duration-300 hover:scale-105 text-lg tracking-wide pulse-glow"
+                  className="cursor-target bg-gradient-neon hover:shadow-glow-green text-neo-dark font-neo font-bold px-8 py-3 mb-8 transition-all hover:scale-105 text-lg tracking-widest"
                   onClick={() => window.open('mailto:rohithsenthil06@gmail.com?subject=Project Inquiry&body=Hi Rohith, I would like to discuss a project with you.')}
                 >
-                  <motion.div
-                    animate={{ rotate: [0, 360] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                  >
-                    <Mail className="mr-2 w-5 h-5" />
-                  </motion.div>
+                  <Mail className="mr-2 w-5 h-5" />
                   HIRE ME
                 </Button>
               </motion.div>
@@ -497,14 +458,9 @@ const Index = () => {
                     }}
                     whileTap={{ scale: 0.9 }}
                     viewport={{ once: true }}
-                    className={`cursor-target p-3 bg-neo-surface border border-current rounded ${social.color} hover:shadow-glow-green transition-all duration-300 ripple neon-border pulse-glow`}
+                    className={`cursor-target p-3 bg-neo-surface border border-current rounded ${social.color} hover:shadow-glow-green transition-all duration-300`}
                   >
-                    <motion.div
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <social.icon className="w-6 h-6" />
-                    </motion.div>
+                    <social.icon className="w-6 h-6" />
                   </motion.a>
                 ))}
               </div>
@@ -515,7 +471,7 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="py-8 border-t border-neo-green/20 bg-neo-surface/30">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 flex justify-center items-center">
           <ScrambledText
             radius={80}
             duration={1.0}
@@ -523,7 +479,7 @@ const Index = () => {
             scrambleChars="01"
             className="text-muted-foreground"
           >
-            <p className="text-muted-foreground font-neo tracking-wide">
+            <p className="text-muted-foreground font-neo tracking-wide text-left">
               © 2024 ROHITH S. Crafted in the digital realm <span className="text-neo-green">@ROHITHS</span>
             </p>
           </ScrambledText>

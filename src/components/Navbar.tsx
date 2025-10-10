@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Home, User, Briefcase, Mail } from 'lucide-react';
+import { Menu, X, Home, User, GraduationCap, Briefcase, Mail } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,6 +8,7 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', href: '#home', icon: Home },
     { name: 'About', href: '#about', icon: User },
+    { name: 'Resume', href: '#resume', icon: GraduationCap },
     { name: 'Projects', href: '#projects', icon: Briefcase },
     { name: 'Contact', href: '#contact', icon: Mail },
   ];
@@ -26,7 +27,7 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
             whileHover={{ scale: 1.05 }}
-            className="font-neo font-bold text-xl text-neo-green tracking-wider cursor-pointer pulse-glow glitch-text"
+            className="font-neo font-bold text-xl text-neo-green tracking-wider cursor-pointer"
             data-text="</ROHITH S>"
           >
             &lt;/ROHITH S&gt;
