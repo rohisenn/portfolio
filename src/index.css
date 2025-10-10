@@ -349,18 +349,16 @@ All colors MUST be HSL.
   p {
     font-family: 'Share Tech Mono', monospace;
     line-height: 1.7;
-    text-align: justify;
-    text-justify: inter-word;
-    word-break: break-word;
+    text-align: left;
+    word-break: normal;
     overflow-wrap: break-word;
-    hyphens: auto;
+    hyphens: none;
     white-space: normal;
   }
   
   /* Center aligned text */
   .text-center p {
     text-align: center;
-    text-justify: none;
   }
   
 
