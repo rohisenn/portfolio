@@ -336,6 +336,7 @@
   align-items: flex-start;
   flex-direction: column;
   gap: 6px;
+  text-align: left;
 }
 
 .pc-handle {
@@ -343,12 +344,14 @@
   font-weight: 500;
   color: #00ffaa;
   line-height: 1;
+  text-align: left;
 }
 
 .pc-status {
   font-size: 14px;
   color: #00ffff;
   line-height: 1;
+  text-align: left;
 }
 
 .pc-contact-btn {
@@ -391,18 +394,21 @@
   top: 3em;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 
 .pc-details h3 {
   font-weight: 600;
   margin: 0;
   font-size: min(5svh, 3em);
-  margin: 0;
   background-image: linear-gradient(to bottom, #00ffaa, #00ffff);
   background-size: 1em 1.5em;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
+  text-align: center;
+  width: 100%;
 }
 
 .pc-details p {
@@ -418,6 +424,7 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
+  text-align: center;
 }
 
 @keyframes glow-bg {

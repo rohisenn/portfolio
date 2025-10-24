@@ -10,7 +10,7 @@ import DecryptedText from '@/components/DecryptedText';
 
 import SpaceClothGrid from '@/components/SpaceClothGrid';
 import InteractiveParticles from '@/components/InteractiveParticles';
-import Resume from '@/components/Resume';
+
 import { Mail, Github, Linkedin, Instagram, User, Briefcase } from 'lucide-react';
 import neuralDashboard from '@/assets/neural-dashboard.jpg';
 import cyberEcommerce from '@/assets/cyber-ecommerce.jpg';
@@ -213,7 +213,7 @@ const Index = () => {
                         scrambleChars="01"
                         className="text-muted-foreground"
                       >
-                        <p className="text-muted-foreground leading-relaxed mb-4 text-left text-wrap-better">
+                        <p className="text-muted-foreground leading-relaxed mb-4">
                           Welcome to my digital realm - where innovative code meets cutting-edge design. 
                           I specialize in creating immersive web experiences and robust applications 
                           that push the boundaries of modern technology.
@@ -239,7 +239,7 @@ const Index = () => {
                           scrambleChars="01"
                           className="text-muted-foreground"
                         >
-                          <p className="text-muted-foreground text-sm leading-relaxed text-left text-wrap-better">
+                          <p className="text-muted-foreground text-sm leading-relaxed">
                             Currently pursuing <span className="text-neo-cyan font-semibold">M.Tech Computer Science & Engineering</span> 
                             (5 Years Integrated) at <span className="text-neo-green font-semibold">Sri Krishna College of Engineering and Technology</span>, 
                             Coimbatore, Tamil Nadu, India.
@@ -254,8 +254,8 @@ const Index = () => {
                         scrambleChars="01"
                         className="text-muted-foreground"
                       >
-                        <p className="text-muted-foreground leading-relaxed mb-6 text-left text-wrap-better">
-                          With a passion for both frontend and backend development, I thrive on crafting seamless user experiences  
+                        <p className="text-muted-foreground leading-relaxed mb-6">
+                          With a passion for both frontend and backend development, I thrive on crafting seamless user experiences
                         </p>
                       </ScrambledText>
 
@@ -280,7 +280,7 @@ const Index = () => {
                           scrambleChars="01"
                           className="text-muted-foreground"
                         >
-                          <p className="text-sm text-muted-foreground text-left">React, TypeScript, Next.js, Tailwind CSS</p>
+                          <p className="text-sm text-muted-foreground text-center">React, TypeScript, Next.js, Tailwind CSS</p>
                         </ScrambledText>
                       </div>
                       <div className="bg-neo-cyan/10 p-4 rounded border border-neo-cyan/20">
@@ -302,7 +302,7 @@ const Index = () => {
                           scrambleChars="01"
                           className="text-muted-foreground"
                         >
-                          <p className="text-sm text-muted-foreground text-left">Node.js, Python, PostgreSQL, MongoDB</p>
+                          <p className="text-sm text-muted-foreground text-center">Node.js, Python, PostgreSQL, MongoDB</p>
                         </ScrambledText>
                       </div>
                       <div className="bg-neo-green/10 p-4 rounded border border-neo-green/20">
@@ -324,7 +324,7 @@ const Index = () => {
                           scrambleChars="01"
                           className="text-muted-foreground"
                         >
-                          <p className="text-sm text-muted-foreground text-left">Docker, AWS, Git, CI/CD, Figma</p>
+                          <p className="text-sm text-muted-foreground text-center">Docker, AWS, Git, CI/CD, Figma</p>
                         </ScrambledText>
                       </div>
                     </div>
@@ -348,8 +348,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Resume Section */}
-      <Resume />
+
 
       {/* Projects Section */}
       <section id="projects" className="py-20 relative">
@@ -373,7 +372,7 @@ const Index = () => {
               scrambleChars="01"
               className="text-muted-foreground"
             >
-              <p className="text-muted-foreground max-w-2xl mx-auto text-left">
+              <p className="text-muted-foreground max-w-2xl mx-auto text-center">
                 Explore my portfolio of innovative web applications and digital solutions
               </p>
             </ScrambledText>
@@ -419,7 +418,7 @@ const Index = () => {
                 scrambleChars="01"
                 className="text-muted-foreground"
               >
-                <p className="text-muted-foreground mb-8 leading-relaxed text-base tracking-normal text-left">
+                <p className="text-muted-foreground mb-8 leading-relaxed text-base tracking-normal">
                   Ready to bring your digital vision to life? Let's collaborate and create 
                   something extraordinary together. I'm always excited to work on innovative 
                   projects and explore new technological frontiers.
@@ -479,7 +478,7 @@ const Index = () => {
             scrambleChars="01"
             className="text-muted-foreground"
           >
-            <p className="text-muted-foreground font-neo tracking-wide text-left">
+            <p className="text-muted-foreground font-neo tracking-wide text-center">
               © 2024 ROHITH S. Crafted in the digital realm <span className="text-neo-green">@ROHITHS</span>
             </p>
           </ScrambledText>

@@ -18,7 +18,6 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Floating geometric shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           animate={{ 
@@ -65,7 +64,6 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          {/* Glitch effect name */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -82,7 +80,6 @@ const Hero = () => {
               >
                 ROHITH S
               </motion.span>
-              {/* Glitch layers */}
               <span className="absolute inset-0 text-neo-cyan animate-neon-flicker opacity-20 translate-x-1">
                 ROHITH S
               </span>
@@ -92,7 +89,6 @@ const Hero = () => {
             </h1>
           </motion.div>
 
-          {/* Tagline with DecryptedText */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -143,7 +139,6 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -170,7 +165,6 @@ const Hero = () => {
             </Button>
           </motion.div>
 
-          {/* Scroll indicator */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
