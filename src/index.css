@@ -344,33 +344,23 @@ All colors MUST be HSL.
   .animate-cyber-slide {
     animation: cyber-slide 2s linear infinite;
   }
-<<<<<<< HEAD
-
-  /* Fix text breaking */
+  /* Paragraph typography - justified, readable, cyber theme */
   p {
-    font-family: 'Share Tech Mono', monospace !important;
-    word-break: normal !important;
-    overflow-wrap: normal !important;
-    white-space: normal !important;
-  }
-=======
-  
-  /* Apply Share Tech Mono to all paragraphs with proper alignment */
-  p {
-    font-family: 'Share Tech Mono', monospace;
-    line-height: 1.7;
-    text-align: left;
+    font-family: 'Exo 2', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    line-height: 1.75;
+    text-align: justify;
+    text-justify: inter-word;
     word-break: normal;
     overflow-wrap: break-word;
-    hyphens: none;
+    hyphens: auto;
+    letter-spacing: normal;
     white-space: normal;
   }
-  
-  /* Center aligned text */
+
+  /* Center aligned paragraphs override */
   .text-center p {
     text-align: center;
+    text-justify: auto;
+    hyphens: none;
   }
-  
-
->>>>>>> f6b0fcc247537e3be7bec17a69f79f91caded8f6
 }
