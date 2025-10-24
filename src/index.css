@@ -344,15 +344,15 @@ All colors MUST be HSL.
   .animate-cyber-slide {
     animation: cyber-slide 2s linear infinite;
   }
-  /* Paragraph typography - justified, readable, cyber theme */
+  /* Paragraph typography - readable alignment */
   p {
     font-family: 'Exo 2', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
     line-height: 1.75;
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: left;
+    text-indent: 1.25em;
     word-break: normal;
     overflow-wrap: break-word;
-    hyphens: auto;
+    hyphens: none;
     letter-spacing: normal;
     white-space: normal;
   }
@@ -360,7 +360,6 @@ All colors MUST be HSL.
   /* Center aligned paragraphs override */
   .text-center p {
     text-align: center;
-    text-justify: auto;
-    hyphens: none;
+    text-indent: 0;
   }
 }
