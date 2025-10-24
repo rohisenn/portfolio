@@ -344,6 +344,7 @@ All colors MUST be HSL.
   .animate-cyber-slide {
     animation: cyber-slide 2s linear infinite;
   }
+<<<<<<< HEAD
 
   /* Fix text breaking */
   p {
@@ -352,4 +353,24 @@ All colors MUST be HSL.
     overflow-wrap: normal !important;
     white-space: normal !important;
   }
+=======
+  
+  /* Apply Share Tech Mono to all paragraphs with proper alignment */
+  p {
+    font-family: 'Share Tech Mono', monospace;
+    line-height: 1.7;
+    text-align: left;
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: none;
+    white-space: normal;
+  }
+  
+  /* Center aligned text */
+  .text-center p {
+    text-align: center;
+  }
+  
+
+>>>>>>> f6b0fcc247537e3be7bec17a69f79f91caded8f6
 }
