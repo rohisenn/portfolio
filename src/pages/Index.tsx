@@ -190,10 +190,10 @@ const Index = () => {
               <div className="w-20 h-1 bg-gradient-neon mx-auto"></div>
             </div>
 
-            <div className="flex flex-col xl:flex-row items-start xl:justify-between gap-1 xl:gap-3">
+            <div className="flex flex-col xl:flex-row items-start xl:justify-between gap-6 xl:gap-8">
               <div className="w-full xl:w-3/5">
                 <div className="bg-neo-surface/50 backdrop-blur-sm border border-neo-green/20 rounded p-8 hover:border-neo-green/50 transition-all duration-300">
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <h3 className="font-neo font-bold text-xl text-neo-cyan mb-4 tracking-wide">
                         <DecryptedText 
@@ -221,7 +221,7 @@ const Index = () => {
                       </ScrambledText>
                       
                       <div className="bg-neo-dark/30 p-4 rounded border border-neo-cyan/20 mb-4">
-                        <h4 className="font-neo text-neo-green mb-2 tracking-wide text-sm">
+                        <h4 className="font-neo text-neo-green mb-3 tracking-wide text-sm">
                           <DecryptedText 
                             text="EDUCATION"
                             animateOn="view"
@@ -239,7 +239,7 @@ const Index = () => {
                           scrambleChars="01"
                           className="text-muted-foreground"
                         >
-                          <p className="text-muted-foreground text-sm leading-relaxed">
+                          <p className="text-muted-foreground text-sm leading-relaxed" style={{textAlign: 'left'}}>
                             Currently pursuing <span className="text-neo-cyan font-semibold">M.Tech Computer Science & Engineering</span> 
                             (5 Years Integrated) at <span className="text-neo-green font-semibold">Sri Krishna College of Engineering and Technology</span>, 
                             Coimbatore, Tamil Nadu, India.

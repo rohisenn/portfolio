@@ -345,11 +345,16 @@ All colors MUST be HSL.
     animation: cyber-slide 2s linear infinite;
   }
 
-  /* Fix text breaking */
+  /* Paragraph styling with cyberpunk font */
   p {
-    font-family: 'Share Tech Mono', monospace !important;
-    word-break: normal !important;
-    overflow-wrap: normal !important;
-    white-space: normal !important;
+    font-family: 'Rajdhani', sans-serif !important;
+    font-weight: 500 !important;
+    line-height: 1.7 !important;
+    letter-spacing: 0.3px !important;
+  }
+  
+  /* Only justify larger paragraphs */
+  p:not(.text-sm):not(.text-xs) {
+    text-align: justify !important;
   }
 }
