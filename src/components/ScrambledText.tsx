@@ -15,28 +15,39 @@ const ScrambledText = ({
   useEffect(() => {
     if (!rootRef.current) return;
 
-    const textElement = rootRef.current.querySelector('p');
+    const container = rootRef.current as HTMLElement;
+    const textElement = (container.querySelector('p') as HTMLElement) || container;
     if (!textElement) return;
 
-    // Split text into characters
-    const text = textElement.textContent;
-    const chars = text.split('');
-    
-    // Clear original text and create spans for each character
+    // Prepare text and splitting strategy
+    const text = textElement.textContent || '';
+    const isLongText = text.trim().length > 60;
+
+    // Clear original text and create spans
     textElement.innerHTML = '';
-    charsRef.current = chars.map(char => {
-      const span = document.createElement('span');
-      span.textContent = char;
-      span.style.display = 'inline-block';
-      span.dataset.content = char;
-      // Preserve space width
-      if (char === ' ') {
-        span.style.width = '0.25em';
-        span.innerHTML = '&nbsp;';
-      }
-      textElement.appendChild(span);
-      return span;
-    });
+
+    const tokens = isLongText ? text.split(/(\s+)/) : text.split('');
+
+    const spans = tokens
+      .map(token => {
+        // Preserve whitespace tokens as text nodes for natural wrapping
+        if (isLongText && /^\s+$/.test(token)) {
+          textElement.appendChild(document.createTextNode(token));
+          return null;
+        }
+
+        const span = document.createElement('span');
+        span.textContent = token;
+        // Use inline (not inline-block) to avoid per-letter wrapping issues
+        // span.style.display = 'inline'; // default
+        span.dataset.content = token; // original content for compatibility
+        span.dataset.original = token;
+        textElement.appendChild(span);
+        return span;
+      })
+      .filter(Boolean) as HTMLSpanElement[];
+
+    charsRef.current = spans;
 
     const handleMove = e => {
       charsRef.current.forEach(c => {
@@ -45,20 +56,24 @@ const ScrambledText = ({
         const dy = e.clientY - (rect.top + rect.height / 2);
         const dist = Math.hypot(dx, dy);
 
-        if (dist < radius && c.dataset.content !== ' ') {
-          const originalChar = c.dataset.content;
-          let iterations = 0;
+        const originalContent = c.dataset.original || '';
+
+        if (dist < radius && originalContent.trim() !== '') {
           const maxIterations = Math.floor(duration * 10 * (1 - dist / radius));
-          
+          let iterations = 0;
+
           const scrambleInterval = setInterval(() => {
             if (iterations < maxIterations) {
-              const randomChar = scrambleChars[Math.floor(Math.random() * scrambleChars.length)];
-              c.textContent = randomChar;
+              // Build a scrambled string of equal length
+              const scrambled = Array.from({ length: originalContent.length })
+                .map(() => scrambleChars[Math.floor(Math.random() * scrambleChars.length)])
+                .join('');
+              c.textContent = scrambled;
               c.style.color = '#00ffff'; // Neo-cyan for scrambled
               iterations++;
             } else {
-              c.textContent = originalChar;
-              c.style.color = ''; // Reset to original color
+              c.textContent = originalContent;
+              c.style.color = '';
               clearInterval(scrambleInterval);
             }
           }, speed * 100);
@@ -80,12 +95,7 @@ const ScrambledText = ({
       className={`scrambled-text ${className}`}
       style={style}
     >
-        <p
-          className={className ? `${className} scrambled-text` : 'scrambled-text'}
-          style={style}
-        >
-          {children}
-        </p>
+      {children}
     </div>
   );
 };
