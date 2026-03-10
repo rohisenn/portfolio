@@ -101,7 +101,7 @@ const Hero = () => {
           >
             <Code2 className="w-6 h-6 text-neo-cyan mr-2" />
             <DecryptedText 
-              text="FULL STACK DEVELOPER"
+              text="Every Day Is a Second Chance"
               animateOn="view"
               speed={100}
               maxIterations={15}

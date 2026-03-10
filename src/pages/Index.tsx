@@ -28,20 +28,20 @@ const Index = () => {
       technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe"]
     },
     {
-      title: "Product Management System",
-      description: "Comprehensive product management solution with inventory tracking, analytics dashboard, and automated workflows for efficient business operations.",
+      title: "First Level Job Screening System",
+      description: "AI-powered job screening system that matches resumes to job descriptions using NLP to streamline the hiring process and identify top candidates efficiently.",
       image: cyberEcommerce,
       link: "#",
       github: "#",
-      technologies: ["React", "Javascript", "MySQL", "Spring-boot", "Tailwind CSS"]
+      technologies: ["React", "FastAPI", "Python", "Sentence Transformers", "Tailwind CSS"]
     },
     {
-      title: "Task Management Dashboard",
-      description: "Interactive task management application with drag-and-drop functionality, team collaboration features, and real-time progress tracking for enhanced productivity.",
+      title: "Online File Sharing Platform",
+      description: "Cloud-based file sharing platform with secure upload and download capabilities, real-time file synchronization, and collaborative sharing features for seamless data management.",
       image: neonChat,
       link: "#",
       github: "#",
-      technologies: ["React", "Redux", "Firebase", "Material-UI", "Chart.js"]
+      technologies: ["React", "Node.js", "AWS S3", "MongoDB", "Socket.io"]
     }
   ];
 
@@ -197,7 +197,7 @@ const Index = () => {
                     <div>
                       <h3 className="font-neo font-bold text-xl text-neo-cyan mb-4 tracking-wide">
                         <DecryptedText 
-                          text="Full Stack Developer"
+                          text="Software Developer"
                           animateOn="view"
                           speed={80}
                           maxIterations={12}
@@ -280,7 +280,7 @@ const Index = () => {
                           scrambleChars="01"
                           className="text-muted-foreground"
                         >
-                          <p className="text-sm text-muted-foreground text-center">React, TypeScript, Next.js, Tailwind CSS</p>
+                          <p className="text-sm text-muted-foreground text-left">React, TypeScript, Next.js, Tailwind CSS</p>
                         </ScrambledText>
                       </div>
                       <div className="bg-neo-cyan/10 p-4 rounded border border-neo-cyan/20">
@@ -302,7 +302,7 @@ const Index = () => {
                           scrambleChars="01"
                           className="text-muted-foreground"
                         >
-                          <p className="text-sm text-muted-foreground text-center">Node.js, Python, PostgreSQL, MongoDB</p>
+                          <p className="text-sm text-muted-foreground text-left">Node.js, Python, Express, Spring Boot</p>
                         </ScrambledText>
                       </div>
                       <div className="bg-neo-green/10 p-4 rounded border border-neo-green/20">
@@ -324,7 +324,51 @@ const Index = () => {
                           scrambleChars="01"
                           className="text-muted-foreground"
                         >
-                          <p className="text-sm text-muted-foreground text-center">Docker, AWS, Git, CI/CD, Figma</p>
+                          <p className="text-sm text-muted-foreground text-left">Docker, Git, Figma, VS Code</p>
+                        </ScrambledText>
+                      </div>
+                      <div className="bg-neo-cyan/10 p-4 rounded border border-neo-cyan/20">
+                        <h4 className="font-neo text-neo-cyan mb-2 tracking-wide">
+                          <DecryptedText 
+                            text="CLOUD & DEVOPS"
+                            animateOn="view"
+                            speed={60}
+                            maxIterations={10}
+                            sequential={true}
+                            className="text-neo-cyan"
+                            encryptedClassName="text-neo-green"
+                          />
+                        </h4>
+                        <ScrambledText
+                          radius={80}
+                          duration={1.0}
+                          speed={0.5}
+                          scrambleChars="01"
+                          className="text-muted-foreground"
+                        >
+                          <p className="text-sm text-muted-foreground text-left">AWS, Azure, Kubernetes, Jenkins</p>
+                        </ScrambledText>
+                      </div>
+                      <div className="bg-neo-green/10 p-4 rounded border border-neo-green/20">
+                        <h4 className="font-neo text-neo-green mb-2 tracking-wide">
+                          <DecryptedText 
+                            text="DATABASES"
+                            animateOn="view"
+                            speed={60}
+                            maxIterations={10}
+                            sequential={true}
+                            className="text-neo-green"
+                            encryptedClassName="text-neo-cyan"
+                          />
+                        </h4>
+                        <ScrambledText
+                          radius={80}
+                          duration={1.0}
+                          speed={0.5}
+                          scrambleChars="01"
+                          className="text-muted-foreground"
+                        >
+                          <p className="text-sm text-muted-foreground text-left">MySQL, MongoDB, PostgreSQL, Redis</p>
                         </ScrambledText>
                       </div>
                     </div>
@@ -335,7 +379,7 @@ const Index = () => {
               <div className="w-full xl:w-2/5 flex justify-center xl:justify-end">
                 <ProfileCard
                   name="ROHITH S"
-                  title="Full Stack Developer"
+                  title="Code. Create. Conquer."
                   handle="rohiths"
                   status="Available for Work"
                   contactText="Contact Me"
@@ -411,19 +455,21 @@ const Index = () => {
             <div className="w-20 h-1 bg-gradient-neon mx-auto mb-8"></div>
             
             <div className="bg-neo-surface/50 backdrop-blur-sm border border-neo-green/20 rounded p-8 hover:border-neo-green/50 transition-all duration-300">
-              <ScrambledText
-                radius={80}
-                duration={1.0}
-                speed={0.5}
-                scrambleChars="01"
-                className="text-muted-foreground"
-              >
-                <p className="text-muted-foreground mb-8 leading-relaxed text-base tracking-normal">
-                  Ready to bring your digital vision to life? Let's collaborate and create 
-                  something extraordinary together. I'm always excited to work on innovative 
-                  projects and explore new technological frontiers.
-                </p>
-              </ScrambledText>
+              <div className="text-center">
+                <ScrambledText
+                  radius={80}
+                  duration={1.0}
+                  speed={0.5}
+                  scrambleChars="01"
+                  className="text-muted-foreground"
+                >
+                  <p className="text-muted-foreground mb-8 leading-relaxed text-base tracking-normal">
+                    Ready to bring your digital vision to life? Let's collaborate and create 
+                    something extraordinary together. I'm always excited to work on innovative 
+                    projects and explore new technological frontiers.
+                  </p>
+                </ScrambledText>
+              </div>
               
               <motion.div
                 whileHover={{ scale: 1.05 }}
