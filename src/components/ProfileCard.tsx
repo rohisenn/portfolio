@@ -21,7 +21,28 @@ const adjust = (value, fromMin, fromMax, toMin, toMax) =>
   round(toMin + ((toMax - toMin) * (value - fromMin)) / (fromMax - fromMin));
 const easeInOutCubic = x => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
 
-const ProfileCardComponent = ({
+interface ProfileCardProps {
+  avatarUrl?: string;
+  iconUrl?: string;
+  grainUrl?: string;
+  behindGradient?: string;
+  innerGradient?: string;
+  showBehindGradient?: boolean;
+  className?: string;
+  enableTilt?: boolean;
+  enableMobileTilt?: boolean;
+  mobileTiltSensitivity?: number;
+  miniAvatarUrl?: string;
+  name?: string;
+  title?: string;
+  handle?: string;
+  status?: string;
+  contactText?: string;
+  showUserInfo?: boolean;
+  onContactClick?: () => void;
+}
+
+const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   avatarUrl = profileImage,
   iconUrl = '',
   grainUrl = '',
@@ -190,7 +211,9 @@ const ProfileCardComponent = ({
 
     const handleClick = () => {
       if (!enableMobileTilt || location.protocol !== 'https:') return;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       if (typeof (window.DeviceMotionEvent as any).requestPermission === 'function') {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (window.DeviceMotionEvent as any).requestPermission()
           .then(state => {
             if (state === 'granted') {

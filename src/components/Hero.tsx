@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, Code2, Sparkles, Download } from 'lucide-react';
+import { ChevronDown, Code2, Sparkles, Eye } from 'lucide-react';
 import DecryptedText from './DecryptedText';
 import ScrambledText from './ScrambledText';
 
@@ -8,12 +8,8 @@ const Hero = () => {
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
   };
-
-  const downloadResume = () => {
-    const link = document.createElement('a');
-    link.href = '/resume.pdf';
-    link.download = 'Rohith_S_Resume.pdf';
-    link.click();
+  const viewResume = () => {
+    window.open('/portfolio/resume.pdf', '_blank');
   };
 
   return (
@@ -21,11 +17,11 @@ const Hero = () => {
       {/* Floating geometric shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          animate={{ 
+          animate={{
             y: [0, -20, 0],
             rotate: [0, 180, 360],
           }}
-          transition={{ 
+          transition={{
             duration: 8,
             repeat: Infinity,
             ease: "linear"
@@ -33,11 +29,11 @@ const Hero = () => {
           className="absolute top-20 left-20 w-8 h-8 border-2 border-neo-cyan rotate-45"
         />
         <motion.div
-          animate={{ 
+          animate={{
             y: [0, 30, 0],
             rotate: [0, -180, -360],
           }}
-          transition={{ 
+          transition={{
             duration: 12,
             repeat: Infinity,
             ease: "linear"
@@ -45,11 +41,11 @@ const Hero = () => {
           className="absolute top-40 right-32 w-6 h-6 bg-neo-cyan/20 rotate-45"
         />
         <motion.div
-          animate={{ 
+          animate={{
             y: [0, -25, 0],
             x: [0, 10, 0],
           }}
-          transition={{ 
+          transition={{
             duration: 10,
             repeat: Infinity,
             ease: "easeInOut"
@@ -100,7 +96,7 @@ const Hero = () => {
             className="text-xl md:text-2xl text-muted-foreground mb-8 font-neo tracking-wide flex items-center justify-center"
           >
             <Code2 className="w-6 h-6 text-neo-cyan mr-2" />
-            <DecryptedText 
+            <DecryptedText
               text="Every Day Is a Second Chance"
               animateOn="view"
               speed={100}
@@ -125,7 +121,7 @@ const Hero = () => {
               scrambleChars="01"
               className="text-muted-foreground"
             >
-              Crafting digital experiences with cutting-edge technologies and 
+              Crafting digital experiences with cutting-edge technologies and
               innovative solutions. Where creativity meets development.
             </ScrambledText>
           </motion.div>
@@ -158,15 +154,15 @@ const Hero = () => {
               VIEW MY WORK
               <ChevronDown className="ml-2 w-4 h-4" />
             </Button>
-            
+
             <Button
-              onClick={downloadResume}
+              onClick={viewResume}
               variant="outline"
               size="lg"
               className="cursor-target ripple cyber-button hover:shadow-glow-cyan font-neo font-bold px-8 py-3 text-lg tracking-wide"
             >
-              <Download className="mr-2 w-4 h-4" />
-              DOWNLOAD RESUME
+              <Eye className="mr-2 w-4 h-4" />
+              VIEW RESUME
             </Button>
           </motion.div>
 

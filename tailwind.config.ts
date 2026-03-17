@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
 	darkMode: ["class"],
@@ -88,11 +89,11 @@ export default {
 					to: { height: '0' }
 				},
 				'glow-pulse': {
-					'0%, 100%': { 
-						boxShadow: '0 0 5px hsl(var(--neo-green)), 0 0 10px hsl(var(--neo-green)), 0 0 15px hsl(var(--neo-green))' 
+					'0%, 100%': {
+						boxShadow: '0 0 5px hsl(var(--neo-green)), 0 0 10px hsl(var(--neo-green)), 0 0 15px hsl(var(--neo-green))'
 					},
-					'50%': { 
-						boxShadow: '0 0 10px hsl(var(--neo-green)), 0 0 20px hsl(var(--neo-green)), 0 0 30px hsl(var(--neo-green))' 
+					'50%': {
+						boxShadow: '0 0 10px hsl(var(--neo-green)), 0 0 20px hsl(var(--neo-green)), 0 0 30px hsl(var(--neo-green))'
 					}
 				},
 				'neon-flicker': {
@@ -127,5 +128,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [tailwindcssAnimate],
 } satisfies Config;
